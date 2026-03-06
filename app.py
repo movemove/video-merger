@@ -17,6 +17,7 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
 
 FFMPEG = '/home/linuxbrew/.linuxbrew/bin/ffmpeg'
+FFPROBE = '/home/linuxbrew/.linuxbrew/bin/ffprobe'
 
 @app.before_request
 def log_request():
@@ -50,32 +51,32 @@ def merge():
     
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
     
-    # Simple approach - no complex filters, just concatenate video streams
     try:
-        # Get duration of first video
-        result = subprocess.run(
-            [FFMPEG, '-i', paths[0], '-f', 'null', '-'],
-            capture_output=True, timeout=30
-        )
-        # Extract duration from stderr
-        duration = None
-        for line in result.stderr.decode().split('\n'):
-            if 'Duration:' in line:
-                try:
-                    duration = line.split('Duration:')[1].split(',')[0].strip()
-                except:
-                    pass
+        # Step 1: Convert each video to standard mp4 first
+        converted_paths = []
+        for i, p in enumerate(paths):
+            converted = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_{i}_conv.mp4')
+            conv_cmd = [
+                FFMPEG, '-y', '-i', p,
+                '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
+                '-c:a', 'aac', '-b:a', '128k',
+                '-movflags', '+faststart',
+                converted
+            ]
+            print(f"Converting {i+1}...")
+            result = subprocess.run(conv_cmd, capture_output=True, timeout=60)
+            if result.returncode != 0:
+                # Try without audio if conversion fails
+                conv_cmd = [
+                    FFMPEG, '-y', '-i', p,
+                    '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
+                    '-an', '-movflags', '+faststart',
+                    converted
+                ]
+                result = subprocess.run(conv_cmd, capture_output=True, timeout=60)
+            converted_paths.append(converted)
         
-        print(f"Merging {count} videos, layout={layout}, audio={include_audio}, duration={duration}")
-        
-        # Build simple ffmpeg command
-        cmd = [FFMPEG, '-y']
-        
-        # Input files
-        for p in paths:
-            cmd.extend(['-i', p])
-        
-        # Filter for stacking
+        # Step 2: Merge videos
         if count == 2:
             if layout == 'vstack':
                 filter_str = '[0:v][1:v]vstack=shortest=1[v]'
@@ -84,7 +85,11 @@ def merge():
         elif count == 3:
             filter_str = '[0:v][1:v][2:v]hstack=shortest=1[v]'
         else:
-            filter_str = '[0:v][1:v]hstack=shortest=1[top];[2:v][3:v]hstack=shortest=1[bot];[top][bot]vstack=shortest=1[v]'
+            filter_str = '[0:v][1:v]hstack=inputs=2[top];[2:v][3:v]hstack=inputs=2[bot];[top][bot]vstack=shortest=1[v]'
+        
+        cmd = [FFMPEG, '-y']
+        for p in converted_paths:
+            cmd.extend(['-i', p])
         
         cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
         
@@ -95,10 +100,13 @@ def merge():
         
         cmd.extend(['-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path])
         
-        print("Running:", ' '.join(cmd[:8]))
+        print("Merging:", ' '.join(cmd[:10]))
         result = subprocess.run(cmd, capture_output=True, timeout=120)
         
+        # Cleanup
         for p in paths:
+            if os.path.exists(p): os.remove(p)
+        for p in converted_paths:
             if os.path.exists(p): os.remove(p)
         
         if result.returncode != 0:
@@ -106,17 +114,12 @@ def merge():
             print("FFmpeg error:", err[:500])
             return jsonify({'success': False, 'error': err[:200]})
         
-        # Check output file
         if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
             return jsonify({'success': False, 'error': 'Output file is empty'})
         
-        print(f"Success! Output size: {os.path.getsize(output_path)}")
+        print(f"Success! Output: {os.path.getsize(output_path)} bytes")
         return jsonify({'success': True, 'video_id': video_id})
         
-    except subprocess.TimeoutExpired:
-        for p in paths:
-            if os.path.exists(p): os.remove(p)
-        return jsonify({'success': False, 'error': '處理超時'})
     except Exception as e:
         for p in paths:
             if os.path.exists(p): os.remove(p)
