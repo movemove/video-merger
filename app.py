@@ -17,7 +17,6 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
 
 FFMPEG = '/home/linuxbrew/.linuxbrew/bin/ffmpeg'
-FFPROBE = '/home/linuxbrew/.linuxbrew/bin/ffprobe'
 
 @app.before_request
 def log_request():
@@ -52,77 +51,71 @@ def merge():
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
     
     try:
-        # Step 1: Convert each video to standard mp4 first
-        converted_paths = []
-        for i, p in enumerate(paths):
-            converted = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_{i}_conv.mp4')
-            conv_cmd = [
-                FFMPEG, '-y', '-i', p,
-                '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
-                '-c:a', 'aac', '-b:a', '128k',
-                '-movflags', '+faststart',
-                converted
-            ]
-            print(f"Converting {i+1}...")
-            result = subprocess.run(conv_cmd, capture_output=True, timeout=60)
-            if result.returncode != 0:
-                # Try without audio if conversion fails
+        # Use concat demuxer - simplest and most compatible
+        list_file = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_list.txt')
+        
+        with open(list_file, 'w') as f:
+            for p in paths:
+                # Convert each to same resolution first
+                converted = p + '.conv.mp4'
                 conv_cmd = [
                     FFMPEG, '-y', '-i', p,
+                    '-vf', 'scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2',
                     '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
-                    '-an', '-movflags', '+faststart',
+                    '-c:a', 'aac', '-b:a', '128k' if include_audio else 'none',
+                    '-an' if not include_audio else None,
                     converted
                 ]
+                # Remove None from list
+                conv_cmd = [x for x in conv_cmd if x is not None]
+                
+                print(f"Converting {os.path.basename(p)}...")
                 result = subprocess.run(conv_cmd, capture_output=True, timeout=60)
-            converted_paths.append(converted)
+                if result.returncode != 0:
+                    # Try simpler conversion
+                    conv_cmd = [
+                        FFMPEG, '-y', '-i', p,
+                        '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
+                        converted
+                    ]
+                    if include_audio:
+                        conv_cmd.extend(['-c:a', 'aac', '-b:a', '128k'])
+                    else:
+                        conv_cmd.extend(['-an'])
+                    result = subprocess.run(conv_cmd, capture_output=True, timeout=60)
+                
+                f.write(f"file '{converted}'\n")
         
-        # Step 2: Merge videos
-        if count == 2:
-            if layout == 'vstack':
-                filter_str = '[0:v][1:v]vstack=shortest=1[v]'
-            else:
-                filter_str = '[0:v][1:v]hstack=shortest=1[v]'
-        elif count == 3:
-            filter_str = '[0:v][1:v][2:v]hstack=shortest=1[v]'
-        else:
-            filter_str = '[0:v][1:v]hstack=inputs=2[top];[2:v][3:v]hstack=inputs=2[bot];[top][bot]vstack=shortest=1[v]'
+        # Merge with concat
+        cmd = [
+            FFMPEG, '-y', '-f', 'concat', '-safe', '0', '-i', list_file,
+            '-c', 'copy', output_path
+        ]
         
-        cmd = [FFMPEG, '-y']
-        for p in converted_paths:
-            cmd.extend(['-i', p])
-        
-        cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
-        
-        if include_audio:
-            cmd.extend(['-map', '0:a', '-c:a', 'aac', '-b:a', '128k'])
-        else:
-            cmd.extend(['-an'])
-        
-        cmd.extend(['-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path])
-        
-        print("Merging:", ' '.join(cmd[:10]))
+        print("Merging...")
         result = subprocess.run(cmd, capture_output=True, timeout=120)
         
         # Cleanup
         for p in paths:
             if os.path.exists(p): os.remove(p)
-        for p in converted_paths:
-            if os.path.exists(p): os.remove(p)
+        if os.path.exists(list_file): os.remove(list_file)
+        # Remove converted files
+        for p in paths:
+            conv = p + '.conv.mp4'
+            if os.path.exists(conv): os.remove(conv)
         
         if result.returncode != 0:
             err = result.stderr.decode()
-            print("FFmpeg error:", err[:500])
+            print("Error:", err[:300])
             return jsonify({'success': False, 'error': err[:200]})
         
         if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
             return jsonify({'success': False, 'error': 'Output file is empty'})
         
-        print(f"Success! Output: {os.path.getsize(output_path)} bytes")
+        print(f"Success! {os.path.getsize(output_path)} bytes")
         return jsonify({'success': True, 'video_id': video_id})
         
     except Exception as e:
-        for p in paths:
-            if os.path.exists(p): os.remove(p)
         return jsonify({'success': False, 'error': str(e)})
 
 @app.route('/download/<video_id>')
