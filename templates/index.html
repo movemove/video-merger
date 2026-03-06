@@ -62,8 +62,6 @@
         .selected { background: #2196F3 !important; }
         .layout-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
         .layout-options button { padding: 8px; font-size: 14px; }
-        .options { margin: 15px 0; }
-        .options label { display: block; padding: 8px 0; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -98,11 +96,6 @@
             
             <h3 id="uploadLabel">步驟 3️⃣：上傳影片</h3>
             <div id="fileInputs"></div>
-            
-            <h3>步驟 4️⃣：選項</h3>
-            <div class="options">
-                <label><input type="checkbox" id="includeAudio" checked> 保留聲音</label>
-            </div>
             
             <button onclick="mergeVideos()" id="mergeBtn">合併影片</button>
         </div>
@@ -178,8 +171,6 @@
             
             formData.append('count', count);
             formData.append('layout', layout);
-            formData.append('includeAudio', document.getElementById('includeAudio').checked);
-            
             
             document.getElementById('mergeBtn').disabled = true;
             document.getElementById('status').textContent = '處理中...';
