@@ -43,7 +43,8 @@ def merge():
         video = request.files.get(f'video{i}')
         if not video:
             return jsonify({'success': False, 'error': f'缺少影片 {i}'})
-        path = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_{i}.mp4')
+        ext = os.path.splitext(video.filename)[1] or '.mp4'
+        path = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_{i}{ext}')
         video.save(path)
         paths.append(path)
     
