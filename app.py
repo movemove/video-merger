@@ -102,20 +102,14 @@ def merge():
         # Filter for stacking - scale to same resolution first
         if count == 2:
             if layout == 'vstack':
-                filter_str = '[0:v]scale=1080:1920[0s];[1:v]scale=1080:1920[1s];[0s][1s]vstack=shortest=1[v]'
+                filter_str = '[0:v]scale=-1:1920[0s];[1:v]scale=-1:1920[1s];[0s][1s]vstack=shortest=1[v]'
             else:
-                filter_str = '[0:v]scale=-2:1080[0s];[1:v]scale=-2:1080[1s];[0s][1s]hstack=shortest=1[v]'
+                filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[0s][1s]hstack=shortest=1[v]'
         elif count == 3:
-            if layout == '3v':
-                filter_str = '[0:v]scale=1080:1920[0s];[1:v]scale=1080:1920[1s];[2:v]scale=1080:1920[2s];[0s][1s][2s]vstack=shortest=1[v]'
-            elif layout == '1t2b':
-                filter_str = '[0:v]scale=1920:540[0s];[1:v]scale=1920:540[1s];[2:v]scale=1920:540[2s];[0s]pad=1920:540:(ow-iw)/2:0[top];[1s][2s]hstack=shortest=1[bot];[top][bot]vstack=shortest=1[v]'
-            elif layout == '2t1b':
-                filter_str = '[0:v]scale=1920:540[0s];[1:v]scale=1920:540[1s];[2:v]scale=1920:540[2s];[0s][1s]hstack=shortest=1[top];[2s]pad=1920:540:(ow-iw)/2:0[bot];[top][bot]vstack=shortest=1[v]'
-            else:
-                filter_str = '[0:v]scale=-2:1080[0s];[1:v]scale=-2:1080[1s];[2:v]scale=-2:1080[2s];[0s][1s][2s]hstack=shortest=1[v]'
+            # All 3-video layouts: simple horizontal stack
+            filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[2:v]scale=1280:-1[2s];[0s][1s][2s]hstack=inputs=3[v]'
         else:
-            filter_str = '[0:v]scale=-2:1080[0s];[1:v]scale=-2:1080[1s];[2:v]scale=-2:1080[2s];[3:v]scale=-2:1080[3s];[0s][1s]hstack=shortest=1[top];[2s][3s]hstack=shortest=1[bot];[top][bot]vstack=shortest=1[v]'
+            filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[2:v]scale=1280:-1[2s];[3:v]scale=1280:-1[3s];[0s][1s]hstack=shortest=1[top];[2s][3s]hstack=shortest=1[bot];[top][bot]vstack=shortest=1[v]'
         
         cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
         

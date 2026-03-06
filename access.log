@@ -1186,3 +1186,27 @@
 2026-03-06 22:07:44,930 - [33mPress CTRL+C to quit[0m
 2026-03-06 22:07:47,895 - HEAD / - IP: 49.213.184.219
 2026-03-06 22:07:47,899 - 127.0.0.1 - - [06/Mar/2026 22:07:47] "HEAD / HTTP/1.1" 200 -
+2026-03-06 22:08:53,382 - HEAD / - IP: 49.213.184.219
+2026-03-06 22:08:53,383 - 127.0.0.1 - - [06/Mar/2026 22:08:53] "HEAD / HTTP/1.1" 200 -
+2026-03-06 22:08:59,132 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-06 22:08:59,132 - [33mPress CTRL+C to quit[0m
+2026-03-06 22:09:02,090 - HEAD / - IP: 49.213.184.219
+2026-03-06 22:09:02,093 - 127.0.0.1 - - [06/Mar/2026 22:09:02] "HEAD / HTTP/1.1" 200 -
+2026-03-06 22:09:39,500 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'}
+2026-03-06 22:09:47,379 - 127.0.0.1 - - [06/Mar/2026 22:09:47] "POST /merge HTTP/1.1" 200 -
+2026-03-06 22:09:50,916 - GET / - IP: 49.213.184.219
+2026-03-06 22:09:50,918 - 127.0.0.1 - - [06/Mar/2026 22:09:50] "GET / HTTP/1.1" 200 -
+2026-03-06 22:10:17,645 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'}
+2026-03-06 22:10:25,552 - 127.0.0.1 - - [06/Mar/2026 22:10:25] "POST /merge HTTP/1.1" 200 -
+2026-03-06 22:10:44,322 - HEAD / - IP: 49.213.184.219
+2026-03-06 22:10:44,322 - 127.0.0.1 - - [06/Mar/2026 22:10:44] "HEAD / HTTP/1.1" 200 -
+2026-03-06 22:12:20,932 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-06 22:12:20,932 - [33mPress CTRL+C to quit[0m
+2026-03-06 22:12:23,960 - HEAD / - IP: 49.213.184.219
+2026-03-06 22:12:23,965 - 127.0.0.1 - - [06/Mar/2026 22:12:23] "HEAD / HTTP/1.1" 200 -
