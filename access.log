@@ -1,0 +1,522 @@
+2026-03-05 10:33:51,892 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 10:33:51,892 - [33mPress CTRL+C to quit[0m
+2026-03-05 10:34:21,709 - GET / - IP: 49.213.184.219 - User-Agent: curl/8.5.0
+2026-03-05 10:34:21,713 - 127.0.0.1 - - [05/Mar/2026 10:34:21] "GET / HTTP/1.1" 200 -
+2026-03-05 10:36:06,489 - GET / - IP: 49.213.184.219 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-05 10:36:06,491 - 127.0.0.1 - - [05/Mar/2026 10:36:06] "GET / HTTP/1.1" 200 -
+2026-03-05 10:36:43,365 - POST /merge - IP: 49.213.184.219 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-05 10:36:49,535 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 10:36:49,535 - [33mPress CTRL+C to quit[0m
+2026-03-05 10:39:18,101 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-05 10:39:18,106 - 127.0.0.1 - - [05/Mar/2026 10:39:18] "GET / HTTP/1.1" 200 -
+2026-03-05 10:39:30,551 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-05 10:39:30,551 - 127.0.0.1 - - [05/Mar/2026 10:39:30] "HEAD / HTTP/1.1" 200 -
+2026-03-05 10:39:43,365 - GET / - IP: 149.154.161.212 - UA: TelegramBot (like TwitterBot)
+2026-03-05 10:39:43,366 - 127.0.0.1 - - [05/Mar/2026 10:39:43] "GET / HTTP/1.1" 200 -
+2026-03-05 10:41:23,007 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-05 10:41:34,758 - 127.0.0.1 - - [05/Mar/2026 10:41:34] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:41:34,788 - GET /download/09ef5cd0-a523-4b04-a5ae-b05b07d73ccb - IP: 49.213.184.219 - FileID: 09ef5cd0-a523-4b04-a5ae-b05b07d73ccb - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-05 10:41:34,789 - 127.0.0.1 - - [05/Mar/2026 10:41:34] "[35m[1mGET /download/09ef5cd0-a523-4b04-a5ae-b05b07d73ccb HTTP/1.1[0m" 206 -
+2026-03-05 10:41:34,815 - GET /download/09ef5cd0-a523-4b04-a5ae-b05b07d73ccb - IP: 49.213.184.219 - FileID: 09ef5cd0-a523-4b04-a5ae-b05b07d73ccb - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-05 10:41:34,816 - 127.0.0.1 - - [05/Mar/2026 10:41:34] "[35m[1mGET /download/09ef5cd0-a523-4b04-a5ae-b05b07d73ccb HTTP/1.1[0m" 206 -
+2026-03-05 10:41:34,893 - GET /download/09ef5cd0-a523-4b04-a5ae-b05b07d73ccb - IP: 49.213.184.219 - FileID: 09ef5cd0-a523-4b04-a5ae-b05b07d73ccb - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-05 10:41:34,894 - 127.0.0.1 - - [05/Mar/2026 10:41:34] "[35m[1mGET /download/09ef5cd0-a523-4b04-a5ae-b05b07d73ccb HTTP/1.1[0m" 206 -
+2026-03-05 10:41:34,931 - GET /download/09ef5cd0-a523-4b04-a5ae-b05b07d73ccb - IP: 49.213.184.219 - FileID: 09ef5cd0-a523-4b04-a5ae-b05b07d73ccb - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-05 10:41:34,932 - 127.0.0.1 - - [05/Mar/2026 10:41:34] "[35m[1mGET /download/09ef5cd0-a523-4b04-a5ae-b05b07d73ccb HTTP/1.1[0m" 206 -
+2026-03-05 10:44:49,747 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 10:44:49,747 - [33mPress CTRL+C to quit[0m
+2026-03-05 10:49:16,846 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:49:16,852 - 127.0.0.1 - - [05/Mar/2026 10:49:16] "GET / HTTP/1.1" 200 -
+2026-03-05 10:49:16,925 - GET /favicon.ico - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:49:16,926 - 127.0.0.1 - - [05/Mar/2026 10:49:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-05 10:49:46,440 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:49:46,481 - 127.0.0.1 - - [05/Mar/2026 10:49:46] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:51:30,008 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:51:30,048 - 127.0.0.1 - - [05/Mar/2026 10:51:30] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:51:36,177 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:51:36,216 - 127.0.0.1 - - [05/Mar/2026 10:51:36] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:51:56,081 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 10:51:56,081 - [33mPress CTRL+C to quit[0m
+2026-03-05 10:52:31,554 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:52:31,904 - 127.0.0.1 - - [05/Mar/2026 10:52:31] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:52:34,076 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:52:34,083 - 127.0.0.1 - - [05/Mar/2026 10:52:34] "GET / HTTP/1.1" 200 -
+2026-03-05 10:52:51,994 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:52:52,320 - 127.0.0.1 - - [05/Mar/2026 10:52:52] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:54:44,491 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 10:54:44,491 - [33mPress CTRL+C to quit[0m
+2026-03-05 10:56:06,313 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 10:56:06,313 - [33mPress CTRL+C to quit[0m
+2026-03-05 10:56:55,845 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:56:56,779 - 127.0.0.1 - - [05/Mar/2026 10:56:56] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:56:56,837 - GET /download/5939d36d-bf4b-4729-bb05-1c07fce49651 - IP: 49.213.184.219 - FileID: 5939d36d-bf4b-4729-bb05-1c07fce49651 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:56:56,843 - 127.0.0.1 - - [05/Mar/2026 10:56:56] "[35m[1mGET /download/5939d36d-bf4b-4729-bb05-1c07fce49651 HTTP/1.1[0m" 206 -
+2026-03-05 10:56:56,869 - GET /download/5939d36d-bf4b-4729-bb05-1c07fce49651 - IP: 49.213.184.219 - FileID: 5939d36d-bf4b-4729-bb05-1c07fce49651 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:56:56,870 - 127.0.0.1 - - [05/Mar/2026 10:56:56] "[35m[1mGET /download/5939d36d-bf4b-4729-bb05-1c07fce49651 HTTP/1.1[0m" 206 -
+2026-03-05 10:56:56,967 - GET /download/5939d36d-bf4b-4729-bb05-1c07fce49651 - IP: 49.213.184.219 - FileID: 5939d36d-bf4b-4729-bb05-1c07fce49651 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:56:56,968 - 127.0.0.1 - - [05/Mar/2026 10:56:56] "[35m[1mGET /download/5939d36d-bf4b-4729-bb05-1c07fce49651 HTTP/1.1[0m" 206 -
+2026-03-05 10:56:57,005 - GET /download/5939d36d-bf4b-4729-bb05-1c07fce49651 - IP: 49.213.184.219 - FileID: 5939d36d-bf4b-4729-bb05-1c07fce49651 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 10:56:57,006 - 127.0.0.1 - - [05/Mar/2026 10:56:57] "[35m[1mGET /download/5939d36d-bf4b-4729-bb05-1c07fce49651 HTTP/1.1[0m" 206 -
+2026-03-05 10:57:56,453 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'hstack'} - UA: curl/8.5.0
+2026-03-05 10:57:56,514 - 127.0.0.1 - - [05/Mar/2026 10:57:56] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:57:56,521 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'vstack'} - UA: curl/8.5.0
+2026-03-05 10:57:56,574 - 127.0.0.1 - - [05/Mar/2026 10:57:56] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:57:56,582 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3h'} - UA: curl/8.5.0
+2026-03-05 10:57:56,660 - 127.0.0.1 - - [05/Mar/2026 10:57:56] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:57:56,667 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3v'} - UA: curl/8.5.0
+2026-03-05 10:57:56,744 - 127.0.0.1 - - [05/Mar/2026 10:57:56] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:57:56,750 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 10:57:56,837 - 127.0.0.1 - - [05/Mar/2026 10:57:56] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:57:56,843 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 10:57:56,925 - 127.0.0.1 - - [05/Mar/2026 10:57:56] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:57:56,932 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3', 'video4'] - Form: {'count': '4', 'layout': '4grid'} - UA: curl/8.5.0
+2026-03-05 10:57:57,022 - 127.0.0.1 - - [05/Mar/2026 10:57:57] "POST /merge HTTP/1.1" 200 -
+2026-03-05 10:59:43,910 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 10:59:43,910 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:00:29,587 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:00:29,680 - 127.0.0.1 - - [05/Mar/2026 11:00:29] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:00:29,687 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 11:00:29,767 - 127.0.0.1 - - [05/Mar/2026 11:00:29] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:01:15,509 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:01:15,515 - 127.0.0.1 - - [05/Mar/2026 11:01:15] "GET / HTTP/1.1" 200 -
+2026-03-05 11:01:32,307 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:01:33,284 - 127.0.0.1 - - [05/Mar/2026 11:01:33] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:01:33,409 - GET /download/462ba77c-9a3f-42b1-8239-d4634598b937 - IP: 49.213.184.219 - FileID: 462ba77c-9a3f-42b1-8239-d4634598b937 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:01:33,410 - 127.0.0.1 - - [05/Mar/2026 11:01:33] "[35m[1mGET /download/462ba77c-9a3f-42b1-8239-d4634598b937 HTTP/1.1[0m" 206 -
+2026-03-05 11:01:33,461 - GET /download/462ba77c-9a3f-42b1-8239-d4634598b937 - IP: 49.213.184.219 - FileID: 462ba77c-9a3f-42b1-8239-d4634598b937 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:01:33,462 - 127.0.0.1 - - [05/Mar/2026 11:01:33] "[35m[1mGET /download/462ba77c-9a3f-42b1-8239-d4634598b937 HTTP/1.1[0m" 206 -
+2026-03-05 11:01:33,551 - GET /download/462ba77c-9a3f-42b1-8239-d4634598b937 - IP: 49.213.184.219 - FileID: 462ba77c-9a3f-42b1-8239-d4634598b937 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:01:33,552 - 127.0.0.1 - - [05/Mar/2026 11:01:33] "[35m[1mGET /download/462ba77c-9a3f-42b1-8239-d4634598b937 HTTP/1.1[0m" 206 -
+2026-03-05 11:01:33,612 - GET /download/462ba77c-9a3f-42b1-8239-d4634598b937 - IP: 49.213.184.219 - FileID: 462ba77c-9a3f-42b1-8239-d4634598b937 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:01:33,613 - 127.0.0.1 - - [05/Mar/2026 11:01:33] "[35m[1mGET /download/462ba77c-9a3f-42b1-8239-d4634598b937 HTTP/1.1[0m" 206 -
+2026-03-05 11:03:36,213 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:03:36,213 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:03:59,395 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:03:59,501 - 127.0.0.1 - - [05/Mar/2026 11:03:59] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:04:06,253 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 11:04:06,356 - 127.0.0.1 - - [05/Mar/2026 11:04:06] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:05:43,435 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:05:43,441 - 127.0.0.1 - - [05/Mar/2026 11:05:43] "GET / HTTP/1.1" 200 -
+2026-03-05 11:06:00,791 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:06:01,984 - 127.0.0.1 - - [05/Mar/2026 11:06:01] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:06:02,117 - GET /download/0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 - IP: 49.213.184.219 - FileID: 0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:06:02,118 - 127.0.0.1 - - [05/Mar/2026 11:06:02] "[35m[1mGET /download/0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 HTTP/1.1[0m" 206 -
+2026-03-05 11:06:02,178 - GET /download/0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 - IP: 49.213.184.219 - FileID: 0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:06:02,179 - 127.0.0.1 - - [05/Mar/2026 11:06:02] "[35m[1mGET /download/0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 HTTP/1.1[0m" 206 -
+2026-03-05 11:06:02,284 - GET /download/0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 - IP: 49.213.184.219 - FileID: 0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:06:02,285 - 127.0.0.1 - - [05/Mar/2026 11:06:02] "[35m[1mGET /download/0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 HTTP/1.1[0m" 206 -
+2026-03-05 11:06:02,353 - GET /download/0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 - IP: 49.213.184.219 - FileID: 0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:06:02,354 - 127.0.0.1 - - [05/Mar/2026 11:06:02] "[35m[1mGET /download/0cc086a6-1019-4c4e-9fa8-da72e13ba5d2 HTTP/1.1[0m" 206 -
+2026-03-05 11:07:04,711 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'hstack'} - UA: curl/8.5.0
+2026-03-05 11:07:04,773 - 127.0.0.1 - - [05/Mar/2026 11:07:04] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:07:04,780 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'vstack'} - UA: curl/8.5.0
+2026-03-05 11:07:04,843 - 127.0.0.1 - - [05/Mar/2026 11:07:04] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:07:04,850 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3h'} - UA: curl/8.5.0
+2026-03-05 11:07:04,927 - 127.0.0.1 - - [05/Mar/2026 11:07:04] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:07:04,933 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3v'} - UA: curl/8.5.0
+2026-03-05 11:07:05,011 - 127.0.0.1 - - [05/Mar/2026 11:07:05] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:07:05,017 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:07:05,116 - 127.0.0.1 - - [05/Mar/2026 11:07:05] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:07:05,122 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 11:07:05,216 - 127.0.0.1 - - [05/Mar/2026 11:07:05] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:07:05,223 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3', 'video4'] - Form: {'count': '4', 'layout': '4grid'} - UA: curl/8.5.0
+2026-03-05 11:07:05,323 - 127.0.0.1 - - [05/Mar/2026 11:07:05] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:10:05,739 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:10:05,739 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:10:25,792 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:10:25,884 - 127.0.0.1 - - [05/Mar/2026 11:10:25] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:15:09,113 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:15:09,119 - 127.0.0.1 - - [05/Mar/2026 11:15:09] "GET / HTTP/1.1" 200 -
+2026-03-05 11:15:29,383 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:15:30,396 - 127.0.0.1 - - [05/Mar/2026 11:15:30] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:15:30,552 - GET /download/d0229424-7274-4e82-ac1c-55690ca455b7 - IP: 49.213.184.219 - FileID: d0229424-7274-4e82-ac1c-55690ca455b7 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:15:30,553 - 127.0.0.1 - - [05/Mar/2026 11:15:30] "[35m[1mGET /download/d0229424-7274-4e82-ac1c-55690ca455b7 HTTP/1.1[0m" 206 -
+2026-03-05 11:15:30,596 - GET /download/d0229424-7274-4e82-ac1c-55690ca455b7 - IP: 49.213.184.219 - FileID: d0229424-7274-4e82-ac1c-55690ca455b7 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:15:30,597 - 127.0.0.1 - - [05/Mar/2026 11:15:30] "[35m[1mGET /download/d0229424-7274-4e82-ac1c-55690ca455b7 HTTP/1.1[0m" 206 -
+2026-03-05 11:15:30,692 - GET /download/d0229424-7274-4e82-ac1c-55690ca455b7 - IP: 49.213.184.219 - FileID: d0229424-7274-4e82-ac1c-55690ca455b7 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:15:30,693 - 127.0.0.1 - - [05/Mar/2026 11:15:30] "[35m[1mGET /download/d0229424-7274-4e82-ac1c-55690ca455b7 HTTP/1.1[0m" 206 -
+2026-03-05 11:15:30,759 - GET /download/d0229424-7274-4e82-ac1c-55690ca455b7 - IP: 49.213.184.219 - FileID: d0229424-7274-4e82-ac1c-55690ca455b7 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:15:30,761 - 127.0.0.1 - - [05/Mar/2026 11:15:30] "[35m[1mGET /download/d0229424-7274-4e82-ac1c-55690ca455b7 HTTP/1.1[0m" 206 -
+2026-03-05 11:16:31,195 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-05 11:16:31,196 - 127.0.0.1 - - [05/Mar/2026 11:16:31] "HEAD / HTTP/1.1" 200 -
+2026-03-05 11:19:42,114 - GET / - IP: 2001:b400:e49b:97c0:9dd8:f309:eaef:ae0d - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:19:42,116 - 127.0.0.1 - - [05/Mar/2026 11:19:42] "GET / HTTP/1.1" 200 -
+2026-03-05 11:20:14,817 - POST /merge - IP: 2001:b400:e49b:97c0:9dd8:f309:eaef:ae0d - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:20:15,854 - 127.0.0.1 - - [05/Mar/2026 11:20:15] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:20:16,178 - GET /download/e4d5d724-db1a-4ce1-b066-20a3542f84ac - IP: 2001:b400:e49b:97c0:9dd8:f309:eaef:ae0d - FileID: e4d5d724-db1a-4ce1-b066-20a3542f84ac - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:20:16,180 - 127.0.0.1 - - [05/Mar/2026 11:20:16] "[35m[1mGET /download/e4d5d724-db1a-4ce1-b066-20a3542f84ac HTTP/1.1[0m" 206 -
+2026-03-05 11:20:16,488 - GET /download/e4d5d724-db1a-4ce1-b066-20a3542f84ac - IP: 2001:b400:e49b:97c0:9dd8:f309:eaef:ae0d - FileID: e4d5d724-db1a-4ce1-b066-20a3542f84ac - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:20:16,489 - 127.0.0.1 - - [05/Mar/2026 11:20:16] "[35m[1mGET /download/e4d5d724-db1a-4ce1-b066-20a3542f84ac HTTP/1.1[0m" 206 -
+2026-03-05 11:20:16,879 - GET /download/e4d5d724-db1a-4ce1-b066-20a3542f84ac - IP: 2001:b400:e49b:97c0:9dd8:f309:eaef:ae0d - FileID: e4d5d724-db1a-4ce1-b066-20a3542f84ac - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:20:16,880 - 127.0.0.1 - - [05/Mar/2026 11:20:16] "[35m[1mGET /download/e4d5d724-db1a-4ce1-b066-20a3542f84ac HTTP/1.1[0m" 206 -
+2026-03-05 11:20:19,466 - GET /download/e4d5d724-db1a-4ce1-b066-20a3542f84ac - IP: 2001:b400:e49b:97c0:9dd8:f309:eaef:ae0d - FileID: e4d5d724-db1a-4ce1-b066-20a3542f84ac - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:20:19,468 - 127.0.0.1 - - [05/Mar/2026 11:20:19] "[35m[1mGET /download/e4d5d724-db1a-4ce1-b066-20a3542f84ac HTTP/1.1[0m" 206 -
+2026-03-05 11:22:14,062 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:22:14,062 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:22:37,049 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:22:37,153 - 127.0.0.1 - - [05/Mar/2026 11:22:37] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:25:14,084 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:25:14,089 - 127.0.0.1 - - [05/Mar/2026 11:25:14] "GET / HTTP/1.1" 200 -
+2026-03-05 11:25:31,028 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3h'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:25:31,898 - 127.0.0.1 - - [05/Mar/2026 11:25:31] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:25:32,027 - GET /download/012336a2-18e3-4795-8dd6-311233071a79 - IP: 49.213.184.219 - FileID: 012336a2-18e3-4795-8dd6-311233071a79 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:25:32,028 - 127.0.0.1 - - [05/Mar/2026 11:25:32] "[35m[1mGET /download/012336a2-18e3-4795-8dd6-311233071a79 HTTP/1.1[0m" 206 -
+2026-03-05 11:25:32,061 - GET /download/012336a2-18e3-4795-8dd6-311233071a79 - IP: 49.213.184.219 - FileID: 012336a2-18e3-4795-8dd6-311233071a79 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:25:32,063 - 127.0.0.1 - - [05/Mar/2026 11:25:32] "[35m[1mGET /download/012336a2-18e3-4795-8dd6-311233071a79 HTTP/1.1[0m" 206 -
+2026-03-05 11:25:32,161 - GET /download/012336a2-18e3-4795-8dd6-311233071a79 - IP: 49.213.184.219 - FileID: 012336a2-18e3-4795-8dd6-311233071a79 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:25:32,163 - 127.0.0.1 - - [05/Mar/2026 11:25:32] "[35m[1mGET /download/012336a2-18e3-4795-8dd6-311233071a79 HTTP/1.1[0m" 206 -
+2026-03-05 11:25:32,224 - GET /download/012336a2-18e3-4795-8dd6-311233071a79 - IP: 49.213.184.219 - FileID: 012336a2-18e3-4795-8dd6-311233071a79 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:25:32,225 - 127.0.0.1 - - [05/Mar/2026 11:25:32] "[35m[1mGET /download/012336a2-18e3-4795-8dd6-311233071a79 HTTP/1.1[0m" 206 -
+2026-03-05 11:25:39,191 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:25:39,192 - 127.0.0.1 - - [05/Mar/2026 11:25:39] "GET / HTTP/1.1" 200 -
+2026-03-05 11:25:58,731 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:25:59,066 - 127.0.0.1 - - [05/Mar/2026 11:25:59] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:26:03,967 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:26:04,283 - 127.0.0.1 - - [05/Mar/2026 11:26:04] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:26:09,524 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 11:26:09,629 - 127.0.0.1 - - [05/Mar/2026 11:26:09] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:27:27,151 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:27:27,151 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:27:50,556 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:27:50,597 - 127.0.0.1 - - [05/Mar/2026 11:27:50] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:28:15,029 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:28:15,029 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:28:40,311 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:28:40,358 - 127.0.0.1 - - [05/Mar/2026 11:28:40] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:29:07,646 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:29:07,961 - 127.0.0.1 - - [05/Mar/2026 11:29:07] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:29:13,998 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:29:13,998 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:29:40,619 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:29:40,714 - 127.0.0.1 - - [05/Mar/2026 11:29:40] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:29:40,720 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 11:29:40,807 - 127.0.0.1 - - [05/Mar/2026 11:29:40] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:29:59,779 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:30:00,110 - 127.0.0.1 - - [05/Mar/2026 11:30:00] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:30:24,315 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'hstack'} - UA: curl/8.5.0
+2026-03-05 11:30:24,378 - 127.0.0.1 - - [05/Mar/2026 11:30:24] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:30:24,385 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'vstack'} - UA: curl/8.5.0
+2026-03-05 11:30:24,439 - 127.0.0.1 - - [05/Mar/2026 11:30:24] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:30:24,447 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3h'} - UA: curl/8.5.0
+2026-03-05 11:30:24,525 - 127.0.0.1 - - [05/Mar/2026 11:30:24] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:30:24,532 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3v'} - UA: curl/8.5.0
+2026-03-05 11:30:24,605 - 127.0.0.1 - - [05/Mar/2026 11:30:24] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:30:24,611 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:30:24,697 - 127.0.0.1 - - [05/Mar/2026 11:30:24] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:30:24,704 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 11:30:24,793 - 127.0.0.1 - - [05/Mar/2026 11:30:24] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:30:24,799 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3', 'video4'] - Form: {'count': '4', 'layout': '4grid'} - UA: curl/8.5.0
+2026-03-05 11:30:24,891 - 127.0.0.1 - - [05/Mar/2026 11:30:24] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:30:51,590 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:30:51,676 - 127.0.0.1 - - [05/Mar/2026 11:30:51] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:31:29,301 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:31:29,636 - 127.0.0.1 - - [05/Mar/2026 11:31:29] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:31:31,734 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:31:31,740 - 127.0.0.1 - - [05/Mar/2026 11:31:31] "GET / HTTP/1.1" 200 -
+2026-03-05 11:31:49,884 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3h'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:31:50,772 - 127.0.0.1 - - [05/Mar/2026 11:31:50] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:31:51,126 - GET /download/9d99e4ca-35c5-42ae-97ba-f1db64cb9fce - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 9d99e4ca-35c5-42ae-97ba-f1db64cb9fce - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:31:51,127 - 127.0.0.1 - - [05/Mar/2026 11:31:51] "[35m[1mGET /download/9d99e4ca-35c5-42ae-97ba-f1db64cb9fce HTTP/1.1[0m" 206 -
+2026-03-05 11:31:51,442 - GET /download/9d99e4ca-35c5-42ae-97ba-f1db64cb9fce - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 9d99e4ca-35c5-42ae-97ba-f1db64cb9fce - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:31:51,444 - 127.0.0.1 - - [05/Mar/2026 11:31:51] "[35m[1mGET /download/9d99e4ca-35c5-42ae-97ba-f1db64cb9fce HTTP/1.1[0m" 206 -
+2026-03-05 11:31:51,829 - GET /download/9d99e4ca-35c5-42ae-97ba-f1db64cb9fce - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 9d99e4ca-35c5-42ae-97ba-f1db64cb9fce - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:31:51,831 - 127.0.0.1 - - [05/Mar/2026 11:31:51] "[35m[1mGET /download/9d99e4ca-35c5-42ae-97ba-f1db64cb9fce HTTP/1.1[0m" 206 -
+2026-03-05 11:31:52,263 - GET /download/9d99e4ca-35c5-42ae-97ba-f1db64cb9fce - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 9d99e4ca-35c5-42ae-97ba-f1db64cb9fce - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:31:52,264 - 127.0.0.1 - - [05/Mar/2026 11:31:52] "[35m[1mGET /download/9d99e4ca-35c5-42ae-97ba-f1db64cb9fce HTTP/1.1[0m" 206 -
+2026-03-05 11:32:23,538 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:32:23,539 - 127.0.0.1 - - [05/Mar/2026 11:32:23] "GET / HTTP/1.1" 200 -
+2026-03-05 11:32:44,287 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:32:44,613 - 127.0.0.1 - - [05/Mar/2026 11:32:44] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:36:38,154 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:36:38,154 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:37:07,066 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:37:07,396 - 127.0.0.1 - - [05/Mar/2026 11:37:07] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:38:32,506 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:38:32,506 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:39:00,406 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:39:03,072 - 127.0.0.1 - - [05/Mar/2026 11:39:03] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:39:15,096 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 11:39:17,831 - 127.0.0.1 - - [05/Mar/2026 11:39:17] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:39:22,066 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:39:22,239 - 127.0.0.1 - - [05/Mar/2026 11:39:22] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:47:54,567 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:47:54,573 - 127.0.0.1 - - [05/Mar/2026 11:47:54] "GET / HTTP/1.1" 200 -
+2026-03-05 11:48:13,505 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:48:13,964 - 127.0.0.1 - - [05/Mar/2026 11:48:13] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:48:14,223 - GET /download/457fe506-08f5-4b91-a799-03515290074c - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 457fe506-08f5-4b91-a799-03515290074c - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:48:14,225 - 127.0.0.1 - - [05/Mar/2026 11:48:14] "[35m[1mGET /download/457fe506-08f5-4b91-a799-03515290074c HTTP/1.1[0m" 206 -
+2026-03-05 11:48:14,463 - GET /download/457fe506-08f5-4b91-a799-03515290074c - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 457fe506-08f5-4b91-a799-03515290074c - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:48:14,464 - 127.0.0.1 - - [05/Mar/2026 11:48:14] "[35m[1mGET /download/457fe506-08f5-4b91-a799-03515290074c HTTP/1.1[0m" 206 -
+2026-03-05 11:48:14,751 - GET /download/457fe506-08f5-4b91-a799-03515290074c - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 457fe506-08f5-4b91-a799-03515290074c - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:48:14,752 - 127.0.0.1 - - [05/Mar/2026 11:48:14] "[35m[1mGET /download/457fe506-08f5-4b91-a799-03515290074c HTTP/1.1[0m" 206 -
+2026-03-05 11:48:15,025 - GET /download/457fe506-08f5-4b91-a799-03515290074c - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 457fe506-08f5-4b91-a799-03515290074c - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:48:15,026 - 127.0.0.1 - - [05/Mar/2026 11:48:15] "[35m[1mGET /download/457fe506-08f5-4b91-a799-03515290074c HTTP/1.1[0m" 206 -
+2026-03-05 11:48:22,246 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-05 11:48:22,247 - 127.0.0.1 - - [05/Mar/2026 11:48:22] "HEAD / HTTP/1.1" 200 -
+2026-03-05 11:53:23,743 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 11:53:23,743 - [33mPress CTRL+C to quit[0m
+2026-03-05 11:53:45,552 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 11:53:48,082 - 127.0.0.1 - - [05/Mar/2026 11:53:48] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:53:54,839 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 11:53:57,389 - 127.0.0.1 - - [05/Mar/2026 11:53:57] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:55:18,933 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:55:18,939 - 127.0.0.1 - - [05/Mar/2026 11:55:18] "GET / HTTP/1.1" 200 -
+2026-03-05 11:55:39,015 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:55:39,469 - 127.0.0.1 - - [05/Mar/2026 11:55:39] "POST /merge HTTP/1.1" 200 -
+2026-03-05 11:55:39,772 - GET /download/7c8f042f-0f9c-4ac8-820c-c516a7492f38 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 7c8f042f-0f9c-4ac8-820c-c516a7492f38 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:55:39,773 - 127.0.0.1 - - [05/Mar/2026 11:55:39] "[35m[1mGET /download/7c8f042f-0f9c-4ac8-820c-c516a7492f38 HTTP/1.1[0m" 206 -
+2026-03-05 11:55:40,049 - GET /download/7c8f042f-0f9c-4ac8-820c-c516a7492f38 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 7c8f042f-0f9c-4ac8-820c-c516a7492f38 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:55:40,051 - 127.0.0.1 - - [05/Mar/2026 11:55:40] "[35m[1mGET /download/7c8f042f-0f9c-4ac8-820c-c516a7492f38 HTTP/1.1[0m" 206 -
+2026-03-05 11:55:40,383 - GET /download/7c8f042f-0f9c-4ac8-820c-c516a7492f38 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 7c8f042f-0f9c-4ac8-820c-c516a7492f38 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:55:40,385 - 127.0.0.1 - - [05/Mar/2026 11:55:40] "[35m[1mGET /download/7c8f042f-0f9c-4ac8-820c-c516a7492f38 HTTP/1.1[0m" 206 -
+2026-03-05 11:55:40,692 - GET /download/7c8f042f-0f9c-4ac8-820c-c516a7492f38 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 7c8f042f-0f9c-4ac8-820c-c516a7492f38 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 11:55:40,693 - 127.0.0.1 - - [05/Mar/2026 11:55:40] "[35m[1mGET /download/7c8f042f-0f9c-4ac8-820c-c516a7492f38 HTTP/1.1[0m" 206 -
+2026-03-05 12:03:22,743 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:03:22,744 - 127.0.0.1 - - [05/Mar/2026 12:03:22] "GET / HTTP/1.1" 200 -
+2026-03-05 12:03:42,079 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:03:42,531 - 127.0.0.1 - - [05/Mar/2026 12:03:42] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:03:42,830 - GET /download/a1a0106e-66e5-435d-b858-8217f143bf56 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: a1a0106e-66e5-435d-b858-8217f143bf56 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:03:42,832 - 127.0.0.1 - - [05/Mar/2026 12:03:42] "[35m[1mGET /download/a1a0106e-66e5-435d-b858-8217f143bf56 HTTP/1.1[0m" 206 -
+2026-03-05 12:03:43,105 - GET /download/a1a0106e-66e5-435d-b858-8217f143bf56 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: a1a0106e-66e5-435d-b858-8217f143bf56 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:03:43,106 - 127.0.0.1 - - [05/Mar/2026 12:03:43] "[35m[1mGET /download/a1a0106e-66e5-435d-b858-8217f143bf56 HTTP/1.1[0m" 206 -
+2026-03-05 12:03:43,435 - GET /download/a1a0106e-66e5-435d-b858-8217f143bf56 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: a1a0106e-66e5-435d-b858-8217f143bf56 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:03:43,436 - 127.0.0.1 - - [05/Mar/2026 12:03:43] "[35m[1mGET /download/a1a0106e-66e5-435d-b858-8217f143bf56 HTTP/1.1[0m" 206 -
+2026-03-05 12:03:43,733 - GET /download/a1a0106e-66e5-435d-b858-8217f143bf56 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: a1a0106e-66e5-435d-b858-8217f143bf56 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:03:43,734 - 127.0.0.1 - - [05/Mar/2026 12:03:43] "[35m[1mGET /download/a1a0106e-66e5-435d-b858-8217f143bf56 HTTP/1.1[0m" 206 -
+2026-03-05 12:05:05,576 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 12:05:05,576 - [33mPress CTRL+C to quit[0m
+2026-03-05 12:05:33,007 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 12:05:36,401 - 127.0.0.1 - - [05/Mar/2026 12:05:36] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:05:44,467 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 12:05:47,819 - 127.0.0.1 - - [05/Mar/2026 12:05:47] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:09:08,330 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:09:08,337 - 127.0.0.1 - - [05/Mar/2026 12:09:08] "GET / HTTP/1.1" 200 -
+2026-03-05 12:09:28,261 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:09:28,778 - 127.0.0.1 - - [05/Mar/2026 12:09:28] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:09:29,033 - GET /download/2a914860-0bc5-4f1d-9bc8-4e7cec278544 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 2a914860-0bc5-4f1d-9bc8-4e7cec278544 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:09:29,035 - 127.0.0.1 - - [05/Mar/2026 12:09:29] "[35m[1mGET /download/2a914860-0bc5-4f1d-9bc8-4e7cec278544 HTTP/1.1[0m" 206 -
+2026-03-05 12:09:29,258 - GET /download/2a914860-0bc5-4f1d-9bc8-4e7cec278544 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 2a914860-0bc5-4f1d-9bc8-4e7cec278544 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:09:29,260 - 127.0.0.1 - - [05/Mar/2026 12:09:29] "[35m[1mGET /download/2a914860-0bc5-4f1d-9bc8-4e7cec278544 HTTP/1.1[0m" 206 -
+2026-03-05 12:09:29,533 - GET /download/2a914860-0bc5-4f1d-9bc8-4e7cec278544 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 2a914860-0bc5-4f1d-9bc8-4e7cec278544 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:09:29,534 - 127.0.0.1 - - [05/Mar/2026 12:09:29] "[35m[1mGET /download/2a914860-0bc5-4f1d-9bc8-4e7cec278544 HTTP/1.1[0m" 206 -
+2026-03-05 12:09:29,812 - GET /download/2a914860-0bc5-4f1d-9bc8-4e7cec278544 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 2a914860-0bc5-4f1d-9bc8-4e7cec278544 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:09:29,813 - 127.0.0.1 - - [05/Mar/2026 12:09:29] "[35m[1mGET /download/2a914860-0bc5-4f1d-9bc8-4e7cec278544 HTTP/1.1[0m" 206 -
+2026-03-05 12:18:27,833 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 12:18:27,833 - [33mPress CTRL+C to quit[0m
+2026-03-05 12:18:52,092 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: curl/8.5.0
+2026-03-05 12:18:57,901 - 127.0.0.1 - - [05/Mar/2026 12:18:57] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:19:05,015 - POST /merge - IP: 127.0.0.1 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: curl/8.5.0
+2026-03-05 12:19:11,139 - 127.0.0.1 - - [05/Mar/2026 12:19:11] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:20:00,626 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:20:00,631 - 127.0.0.1 - - [05/Mar/2026 12:20:00] "GET / HTTP/1.1" 200 -
+2026-03-05 12:20:21,719 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:20:22,353 - 127.0.0.1 - - [05/Mar/2026 12:20:22] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:20:22,697 - GET /download/2e4c7a58-7cdf-45a2-9e67-878a6ca5773c - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 2e4c7a58-7cdf-45a2-9e67-878a6ca5773c - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:20:22,699 - 127.0.0.1 - - [05/Mar/2026 12:20:22] "[35m[1mGET /download/2e4c7a58-7cdf-45a2-9e67-878a6ca5773c HTTP/1.1[0m" 206 -
+2026-03-05 12:20:23,019 - GET /download/2e4c7a58-7cdf-45a2-9e67-878a6ca5773c - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 2e4c7a58-7cdf-45a2-9e67-878a6ca5773c - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:20:23,020 - 127.0.0.1 - - [05/Mar/2026 12:20:23] "[35m[1mGET /download/2e4c7a58-7cdf-45a2-9e67-878a6ca5773c HTTP/1.1[0m" 206 -
+2026-03-05 12:20:23,410 - GET /download/2e4c7a58-7cdf-45a2-9e67-878a6ca5773c - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 2e4c7a58-7cdf-45a2-9e67-878a6ca5773c - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:20:23,411 - 127.0.0.1 - - [05/Mar/2026 12:20:23] "[35m[1mGET /download/2e4c7a58-7cdf-45a2-9e67-878a6ca5773c HTTP/1.1[0m" 206 -
+2026-03-05 12:20:23,838 - GET /download/2e4c7a58-7cdf-45a2-9e67-878a6ca5773c - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 2e4c7a58-7cdf-45a2-9e67-878a6ca5773c - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:20:23,840 - 127.0.0.1 - - [05/Mar/2026 12:20:23] "[35m[1mGET /download/2e4c7a58-7cdf-45a2-9e67-878a6ca5773c HTTP/1.1[0m" 206 -
+2026-03-05 12:20:49,942 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:20:49,943 - 127.0.0.1 - - [05/Mar/2026 12:20:49] "GET / HTTP/1.1" 200 -
+2026-03-05 12:21:05,930 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '2t1b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:21:06,581 - 127.0.0.1 - - [05/Mar/2026 12:21:06] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:21:06,923 - GET /download/0043f6d9-342f-4468-99fe-82ea19c6c0a9 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 0043f6d9-342f-4468-99fe-82ea19c6c0a9 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:21:06,924 - 127.0.0.1 - - [05/Mar/2026 12:21:06] "[35m[1mGET /download/0043f6d9-342f-4468-99fe-82ea19c6c0a9 HTTP/1.1[0m" 206 -
+2026-03-05 12:21:07,246 - GET /download/0043f6d9-342f-4468-99fe-82ea19c6c0a9 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 0043f6d9-342f-4468-99fe-82ea19c6c0a9 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:21:07,248 - 127.0.0.1 - - [05/Mar/2026 12:21:07] "[35m[1mGET /download/0043f6d9-342f-4468-99fe-82ea19c6c0a9 HTTP/1.1[0m" 206 -
+2026-03-05 12:21:07,735 - GET /download/0043f6d9-342f-4468-99fe-82ea19c6c0a9 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 0043f6d9-342f-4468-99fe-82ea19c6c0a9 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:21:07,737 - 127.0.0.1 - - [05/Mar/2026 12:21:07] "[35m[1mGET /download/0043f6d9-342f-4468-99fe-82ea19c6c0a9 HTTP/1.1[0m" 206 -
+2026-03-05 12:21:08,084 - GET /download/0043f6d9-342f-4468-99fe-82ea19c6c0a9 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 0043f6d9-342f-4468-99fe-82ea19c6c0a9 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:21:08,085 - 127.0.0.1 - - [05/Mar/2026 12:21:08] "[35m[1mGET /download/0043f6d9-342f-4468-99fe-82ea19c6c0a9 HTTP/1.1[0m" 206 -
+2026-03-05 12:26:15,781 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:26:15,782 - 127.0.0.1 - - [05/Mar/2026 12:26:15] "GET / HTTP/1.1" 200 -
+2026-03-05 12:26:44,543 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2', 'video3', 'video4'] - Form: {'count': '4', 'layout': '4grid'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:26:45,683 - 127.0.0.1 - - [05/Mar/2026 12:26:45] "POST /merge HTTP/1.1" 200 -
+2026-03-05 12:26:46,016 - GET /download/10e3c828-ce0e-4cab-b07f-bbaa71561d53 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 10e3c828-ce0e-4cab-b07f-bbaa71561d53 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:26:46,018 - 127.0.0.1 - - [05/Mar/2026 12:26:46] "[35m[1mGET /download/10e3c828-ce0e-4cab-b07f-bbaa71561d53 HTTP/1.1[0m" 206 -
+2026-03-05 12:26:46,323 - GET /download/10e3c828-ce0e-4cab-b07f-bbaa71561d53 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 10e3c828-ce0e-4cab-b07f-bbaa71561d53 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:26:46,324 - 127.0.0.1 - - [05/Mar/2026 12:26:46] "[35m[1mGET /download/10e3c828-ce0e-4cab-b07f-bbaa71561d53 HTTP/1.1[0m" 206 -
+2026-03-05 12:26:46,725 - GET /download/10e3c828-ce0e-4cab-b07f-bbaa71561d53 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 10e3c828-ce0e-4cab-b07f-bbaa71561d53 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:26:46,726 - 127.0.0.1 - - [05/Mar/2026 12:26:46] "[35m[1mGET /download/10e3c828-ce0e-4cab-b07f-bbaa71561d53 HTTP/1.1[0m" 206 -
+2026-03-05 12:26:47,146 - GET /download/10e3c828-ce0e-4cab-b07f-bbaa71561d53 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 10e3c828-ce0e-4cab-b07f-bbaa71561d53 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 12:26:47,147 - 127.0.0.1 - - [05/Mar/2026 12:26:47] "[35m[1mGET /download/10e3c828-ce0e-4cab-b07f-bbaa71561d53 HTTP/1.1[0m" 206 -
+2026-03-05 12:43:52,031 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/23D127 Safari/604.1
+2026-03-05 12:43:52,032 - 127.0.0.1 - - [05/Mar/2026 12:43:52] "GET / HTTP/1.1" 200 -
+2026-03-05 12:43:53,255 - GET /favicon.ico - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Telegram/32473 CFNetwork/3860.400.51 Darwin/25.3.0
+2026-03-05 12:43:53,257 - 127.0.0.1 - - [05/Mar/2026 12:43:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-05 12:57:20,183 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 12:57:20,183 - [33mPress CTRL+C to quit[0m
+2026-03-05 13:30:01,665 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-05 13:30:01,665 - [33mPress CTRL+C to quit[0m
+2026-03-05 14:20:16,649 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:20:16,653 - 127.0.0.1 - - [05/Mar/2026 14:20:16] "GET / HTTP/1.1" 200 -
+2026-03-05 14:21:04,119 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'vstack'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:21:09,695 - 127.0.0.1 - - [05/Mar/2026 14:21:09] "POST /merge HTTP/1.1" 200 -
+2026-03-05 14:21:44,209 - GET /download/691b91f2-0531-421c-8626-c65ef29e6de3 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 691b91f2-0531-421c-8626-c65ef29e6de3 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:21:44,211 - 127.0.0.1 - - [05/Mar/2026 14:21:44] "[35m[1mGET /download/691b91f2-0531-421c-8626-c65ef29e6de3 HTTP/1.1[0m" 206 -
+2026-03-05 14:21:44,424 - GET /download/691b91f2-0531-421c-8626-c65ef29e6de3 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 691b91f2-0531-421c-8626-c65ef29e6de3 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:21:44,425 - 127.0.0.1 - - [05/Mar/2026 14:21:44] "[35m[1mGET /download/691b91f2-0531-421c-8626-c65ef29e6de3 HTTP/1.1[0m" 206 -
+2026-03-05 14:21:44,706 - GET /download/691b91f2-0531-421c-8626-c65ef29e6de3 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 691b91f2-0531-421c-8626-c65ef29e6de3 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:21:44,708 - 127.0.0.1 - - [05/Mar/2026 14:21:44] "[35m[1mGET /download/691b91f2-0531-421c-8626-c65ef29e6de3 HTTP/1.1[0m" 206 -
+2026-03-05 14:21:46,859 - GET /download/691b91f2-0531-421c-8626-c65ef29e6de3 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 691b91f2-0531-421c-8626-c65ef29e6de3 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:21:46,860 - 127.0.0.1 - - [05/Mar/2026 14:21:46] "[35m[1mGET /download/691b91f2-0531-421c-8626-c65ef29e6de3 HTTP/1.1[0m" 206 -
+2026-03-05 14:22:11,443 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:22:11,445 - 127.0.0.1 - - [05/Mar/2026 14:22:11] "GET / HTTP/1.1" 200 -
+2026-03-05 14:22:35,047 - POST /merge - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'hstack'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:22:41,206 - 127.0.0.1 - - [05/Mar/2026 14:22:41] "POST /merge HTTP/1.1" 200 -
+2026-03-05 14:22:41,452 - GET /download/9c290352-aecb-4a54-aa39-e732eef78849 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 9c290352-aecb-4a54-aa39-e732eef78849 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:22:41,454 - 127.0.0.1 - - [05/Mar/2026 14:22:41] "[35m[1mGET /download/9c290352-aecb-4a54-aa39-e732eef78849 HTTP/1.1[0m" 206 -
+2026-03-05 14:22:41,675 - GET /download/9c290352-aecb-4a54-aa39-e732eef78849 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 9c290352-aecb-4a54-aa39-e732eef78849 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:22:41,677 - 127.0.0.1 - - [05/Mar/2026 14:22:41] "[35m[1mGET /download/9c290352-aecb-4a54-aa39-e732eef78849 HTTP/1.1[0m" 206 -
+2026-03-05 14:22:41,965 - GET /download/9c290352-aecb-4a54-aa39-e732eef78849 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 9c290352-aecb-4a54-aa39-e732eef78849 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:22:41,966 - 127.0.0.1 - - [05/Mar/2026 14:22:41] "[35m[1mGET /download/9c290352-aecb-4a54-aa39-e732eef78849 HTTP/1.1[0m" 206 -
+2026-03-05 14:22:44,842 - GET /download/9c290352-aecb-4a54-aa39-e732eef78849 - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - FileID: 9c290352-aecb-4a54-aa39-e732eef78849 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 14:22:44,844 - 127.0.0.1 - - [05/Mar/2026 14:22:44] "[35m[1mGET /download/9c290352-aecb-4a54-aa39-e732eef78849 HTTP/1.1[0m" 206 -
+2026-03-05 17:47:19,236 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 17:47:19,237 - 127.0.0.1 - - [05/Mar/2026 17:47:19] "GET / HTTP/1.1" 200 -
+2026-03-05 17:54:20,595 - GET / - IP: 2001:b400:e446:9bfc:84a5:9e98:690f:400 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 17:54:20,596 - 127.0.0.1 - - [05/Mar/2026 17:54:20] "GET / HTTP/1.1" 200 -
+2026-03-05 19:41:05,026 - POST /merge - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:11,018 - 127.0.0.1 - - [05/Mar/2026 19:41:11] "POST /merge HTTP/1.1" 200 -
+2026-03-05 19:41:16,133 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:16,135 - 127.0.0.1 - - [05/Mar/2026 19:41:16] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:41:16,561 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:16,562 - 127.0.0.1 - - [05/Mar/2026 19:41:16] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:41:17,052 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:17,053 - 127.0.0.1 - - [05/Mar/2026 19:41:17] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:41:17,822 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:17,824 - 127.0.0.1 - - [05/Mar/2026 19:41:17] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:41:18,259 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:18,260 - 127.0.0.1 - - [05/Mar/2026 19:41:18] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:41:18,685 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:18,686 - 127.0.0.1 - - [05/Mar/2026 19:41:18] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:41:19,156 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:19,157 - 127.0.0.1 - - [05/Mar/2026 19:41:19] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:41:21,353 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:41:21,355 - 127.0.0.1 - - [05/Mar/2026 19:41:21] "GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1" 200 -
+2026-03-05 19:43:53,595 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:43:53,597 - 127.0.0.1 - - [05/Mar/2026 19:43:53] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:43:53,910 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:43:53,912 - 127.0.0.1 - - [05/Mar/2026 19:43:53] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:43:54,289 - GET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: c372bfe2-ecd2-4315-ac0f-53707158fabc - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:43:54,290 - 127.0.0.1 - - [05/Mar/2026 19:43:54] "[35m[1mGET /download/c372bfe2-ecd2-4315-ac0f-53707158fabc HTTP/1.1[0m" 206 -
+2026-03-05 19:43:54,339 - GET / - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:43:54,340 - 127.0.0.1 - - [05/Mar/2026 19:43:54] "GET / HTTP/1.1" 200 -
+2026-03-05 19:44:50,719 - POST /merge - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:44:55,213 - 127.0.0.1 - - [05/Mar/2026 19:44:55] "POST /merge HTTP/1.1" 200 -
+2026-03-05 19:44:55,555 - GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: e2540529-b613-4b98-93a5-1e080e803ee4 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:44:55,561 - 127.0.0.1 - - [05/Mar/2026 19:44:55] "[35m[1mGET /download/e2540529-b613-4b98-93a5-1e080e803ee4 HTTP/1.1[0m" 206 -
+2026-03-05 19:44:55,879 - GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: e2540529-b613-4b98-93a5-1e080e803ee4 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:44:55,880 - 127.0.0.1 - - [05/Mar/2026 19:44:55] "[35m[1mGET /download/e2540529-b613-4b98-93a5-1e080e803ee4 HTTP/1.1[0m" 206 -
+2026-03-05 19:44:56,367 - GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: e2540529-b613-4b98-93a5-1e080e803ee4 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:44:56,368 - 127.0.0.1 - - [05/Mar/2026 19:44:56] "[35m[1mGET /download/e2540529-b613-4b98-93a5-1e080e803ee4 HTTP/1.1[0m" 206 -
+2026-03-05 19:44:56,699 - GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: e2540529-b613-4b98-93a5-1e080e803ee4 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:44:56,700 - 127.0.0.1 - - [05/Mar/2026 19:44:56] "[35m[1mGET /download/e2540529-b613-4b98-93a5-1e080e803ee4 HTTP/1.1[0m" 206 -
+2026-03-05 19:44:57,022 - GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: e2540529-b613-4b98-93a5-1e080e803ee4 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:44:57,023 - 127.0.0.1 - - [05/Mar/2026 19:44:57] "[35m[1mGET /download/e2540529-b613-4b98-93a5-1e080e803ee4 HTTP/1.1[0m" 206 -
+2026-03-05 19:44:57,333 - GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: e2540529-b613-4b98-93a5-1e080e803ee4 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:44:57,334 - 127.0.0.1 - - [05/Mar/2026 19:44:57] "[35m[1mGET /download/e2540529-b613-4b98-93a5-1e080e803ee4 HTTP/1.1[0m" 206 -
+2026-03-05 19:44:57,702 - GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: e2540529-b613-4b98-93a5-1e080e803ee4 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:44:57,703 - 127.0.0.1 - - [05/Mar/2026 19:44:57] "[35m[1mGET /download/e2540529-b613-4b98-93a5-1e080e803ee4 HTTP/1.1[0m" 206 -
+2026-03-05 19:45:00,717 - GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - FileID: e2540529-b613-4b98-93a5-1e080e803ee4 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:45:00,719 - 127.0.0.1 - - [05/Mar/2026 19:45:00] "GET /download/e2540529-b613-4b98-93a5-1e080e803ee4 HTTP/1.1" 200 -
+2026-03-05 19:45:28,934 - GET / - IP: 2001:b400:e44c:268a:9039:5cc5:c076:342d - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-05 19:45:28,936 - 127.0.0.1 - - [05/Mar/2026 19:45:28] "GET / HTTP/1.1" 200 -
+2026-03-06 08:27:33,998 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 08:27:33,999 - 127.0.0.1 - - [06/Mar/2026 08:27:33] "HEAD / HTTP/1.1" 200 -
+2026-03-06 13:17:31,503 - GET / - IP: 2001:b400:e49a:e97d:5c50:8a71:2d72:2821 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 13:17:31,505 - 127.0.0.1 - - [06/Mar/2026 13:17:31] "[36mGET / HTTP/1.1[0m" 304 -
+2026-03-06 13:18:24,317 - GET / - IP: 2001:b400:e49a:e97d:5c50:8a71:2d72:2821 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 13:18:24,319 - 127.0.0.1 - - [06/Mar/2026 13:18:24] "GET / HTTP/1.1" 200 -
+2026-03-06 19:33:02,420 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 19:33:02,422 - 127.0.0.1 - - [06/Mar/2026 19:33:02] "[36mGET / HTTP/1.1[0m" 304 -
+2026-03-06 19:33:03,201 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 19:33:03,203 - 127.0.0.1 - - [06/Mar/2026 19:33:03] "[36mGET / HTTP/1.1[0m" 304 -
+2026-03-06 19:34:59,130 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 19:34:59,131 - 127.0.0.1 - - [06/Mar/2026 19:34:59] "HEAD / HTTP/1.1" 200 -
+2026-03-06 19:36:59,052 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-06 19:36:59,052 - [33mPress CTRL+C to quit[0m
+2026-03-06 19:37:00,795 - GET / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 19:37:00,799 - 127.0.0.1 - - [06/Mar/2026 19:37:00] "GET / HTTP/1.1" 200 -
+2026-03-06 19:37:47,199 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 19:37:47,200 - 127.0.0.1 - - [06/Mar/2026 19:37:47] "HEAD / HTTP/1.1" 200 -
+2026-03-06 19:38:22,641 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Mobile/23D8133 Safari/604.1
+2026-03-06 19:38:22,642 - 127.0.0.1 - - [06/Mar/2026 19:38:22] "GET / HTTP/1.1" 200 -
+2026-03-06 19:38:22,880 - GET /favicon.ico - IP: 49.213.184.219 - UA: Telegram/32487 CFNetwork/3860.400.51 Darwin/25.3.0
+2026-03-06 19:38:22,881 - 127.0.0.1 - - [06/Mar/2026 19:38:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-06 19:38:50,998 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'hstack', 'includeAudio': 'true', 'includeSubtitles': 'true'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Mobile/23D8133 Safari/604.1
+2026-03-06 19:38:51,094 - 127.0.0.1 - - [06/Mar/2026 19:38:51] "POST /merge HTTP/1.1" 200 -
+2026-03-06 19:39:05,779 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Mobile/23D8133 Safari/604.1
+2026-03-06 19:39:05,780 - 127.0.0.1 - - [06/Mar/2026 19:39:05] "[36mGET / HTTP/1.1[0m" 304 -
+2026-03-06 19:39:07,255 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 19:39:07,256 - 127.0.0.1 - - [06/Mar/2026 19:39:07] "GET / HTTP/1.1" 200 -
+2026-03-06 19:39:38,850 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'hstack', 'includeAudio': 'true', 'includeSubtitles': 'true'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 19:39:38,944 - 127.0.0.1 - - [06/Mar/2026 19:39:38] "POST /merge HTTP/1.1" 200 -
+2026-03-06 19:40:02,626 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 19:40:02,627 - 127.0.0.1 - - [06/Mar/2026 19:40:02] "HEAD / HTTP/1.1" 200 -

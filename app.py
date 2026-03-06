@@ -38,6 +38,8 @@ def index():
 def merge():
     count = int(request.form.get('count', 2))
     layout = request.form.get('layout', 'hstack')
+    include_audio = request.form.get('includeAudio', 'true') == 'true'
+    include_subtitles = request.form.get('includeSubtitles', 'true') == 'true'
     
     video_id = str(uuid.uuid4())
     paths = []
@@ -74,10 +76,32 @@ def merge():
     else:  # 4
         filter_str = '[0:v][1:v]hstack=inputs=2[r1];[2:v][3:v]hstack=inputs=2[r2];[r1][r2]vstack=inputs=2[v]'
     
+    # Build ffmpeg command
     cmd = [FFMPEG, '-i', paths[0], '-i', paths[1]]
     if count >= 3: cmd.extend(['-i', paths[2]])
     if count == 4: cmd.extend(['-i', paths[3]])
-    cmd.extend(['-filter_complex', filter_str, '-map', '[v]', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path, '-y'])
+    
+    # Build mapping
+    if include_audio:
+        # Use first video's audio
+        cmd.extend(['-map', '0:v', '-map', '1:a'])
+        if count >= 3: cmd.extend(['-map', '2:a'])
+        if count == 4: cmd.extend(['-map', '3:a'])
+    else:
+        cmd.extend(['-map', '[v]', '-an'])
+    
+    if not include_subtitles:
+        cmd.extend(['-s:s', 'mov_text'])
+    
+    cmd.extend(['-filter_complex', filter_str, '-c:v', 'libx264', '-preset', 'fast', '-crf', '23'])
+    
+    if not include_audio:
+        cmd.append('-c:a')
+        cmd.append('aac')
+        cmd.append('-b:a')
+        cmd.append('128k')
+    
+    cmd.extend([output_path, '-y'])
     
     result = subprocess.run(cmd, capture_output=True)
     
