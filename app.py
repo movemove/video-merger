@@ -51,9 +51,34 @@ def merge():
     
     # Simple approach - no complex filters, just concatenate video streams
     try:
+        # Step 1: Convert each video to standard mp4 first
+        print("Converting videos to standard format...")
+        converted_paths = []
+        for i, p in enumerate(paths):
+            converted = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_conv_{i}.mp4')
+            cmd = [
+                FFMPEG, '-y', '-i', p,
+                '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
+                '-c:a', 'aac', '-b:a', '128k',
+                '-movflags', '+faststart',
+                converted
+            ]
+            result = subprocess.run(cmd, capture_output=True, timeout=60)
+            if result.returncode != 0:
+                # Try without audio if conversion fails
+                cmd = [
+                    FFMPEG, '-y', '-i', p,
+                    '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
+                    '-an', '-movflags', '+faststart',
+                    converted
+                ]
+                result = subprocess.run(cmd, capture_output=True, timeout=60)
+            converted_paths.append(converted)
+            print(f"Converted {i+1}/{count}")
+        
         # Get duration of first video
         result = subprocess.run(
-            [FFMPEG, '-i', paths[0], '-f', 'null', '-'],
+            [FFMPEG, '-i', converted_paths[0], '-f', 'null', '-'],
             capture_output=True, timeout=30
         )
         # Extract duration from stderr
@@ -71,7 +96,7 @@ def merge():
         cmd = [FFMPEG, '-y']
         
         # Input files
-        for p in paths:
+        for p in converted_paths:
             cmd.extend(['-i', p])
         
         # Filter for stacking - scale to same resolution first
@@ -101,16 +126,24 @@ def merge():
         
         cmd.extend(['-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path])
         
-        print("Running:", ' '.join(cmd[:8]))
+        print("Running:", ' '.join(cmd[:12]))
+        print("Full cmd:", ' '.join(cmd))
         result = subprocess.run(cmd, capture_output=True, timeout=120)
+        stderr = result.stderr.decode()
+        if result.returncode != 0:
+            print("Full FFmpeg error:", stderr[:2000])
         
-        for p in paths:
+        for p in converted_paths:
             if os.path.exists(p): os.remove(p)
         
         if result.returncode != 0:
             err = result.stderr.decode()
-            print("FFmpeg error:", err[:500])
+            print("FFmpeg error:", stderr[:2000] if stderr else err[:500])
             return jsonify({'success': False, 'error': err[:200]})
+        
+        # Cleanup original files
+        for p in paths:
+            if os.path.exists(p): os.remove(p)
         
         # Check output file
         if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
@@ -120,11 +153,11 @@ def merge():
         return jsonify({'success': True, 'video_id': video_id})
         
     except subprocess.TimeoutExpired:
-        for p in paths:
+        for p in converted_paths:
             if os.path.exists(p): os.remove(p)
         return jsonify({'success': False, 'error': '處理超時'})
     except Exception as e:
-        for p in paths:
+        for p in converted_paths:
             if os.path.exists(p): os.remove(p)
         return jsonify({'success': False, 'error': str(e)})
 
