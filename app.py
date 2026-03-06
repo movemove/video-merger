@@ -6,7 +6,7 @@ import logging
 from flask import Flask, request, send_file, jsonify
 
 # Setup logging
-logging.basicConfig(filename='/home/alice/.openclaw/workspace/double_video/access.log', 
+logging.basicConfig(filename='/home/alice/.openclaw/workspace/double_video/access.log',
                     level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger()
 
@@ -38,10 +38,10 @@ def index():
 def merge():
     count = int(request.form.get('count', 2))
     layout = request.form.get('layout', 'hstack')
-    
+
     video_id = str(uuid.uuid4())
     paths = []
-    
+
     for i in range(1, count + 1):
         video = request.files.get(f'video{i}')
         if not video:
@@ -49,46 +49,54 @@ def merge():
         path = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_{i}.mp4')
         video.save(path)
         paths.append(path)
-    
+
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
+
+    # Build filters - scale all videos to same resolution first
+    # For hstack: scale to same height, then stack horizontally
+    # For vstack: scale to same width, then stack vertically
     
-    # Build filters - use xstack for complex layouts
     if count == 2:
         if layout == 'vstack':
-            filter_str = '[0:v][1:v]vstack=inputs=2[v]'
+            # Scale to same width
+            filter_str = '[0:v]scale=1080:-2[0s];[1:v]scale=1080:-2[1s];[0s][1s]vstack=inputs=2[v]'
         else:
-            filter_str = '[0:v][1:v]hstack=inputs=2[v]'
+            # Scale to same height
+            filter_str = '[0:v]scale=-2:1080[0s];[1:v]scale=-2:1080[1s];[0s][1s]hstack=inputs=2[v]'
     elif count == 3:
-        if layout == '3h':
-            filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
-        elif layout == '3v':
-            filter_str = '[0:v][1:v][2:v]vstack=inputs=3[v]'
+        if layout == '3v':
+            filter_str = '[0:v]scale=1080:-2[0s];[1:v]scale=1080:-2[1s];[2:v]scale=1080:-2[2s];[0s][1s][2s]vstack=inputs=3[v]'
         elif layout == '1t2b':
-            # 上1下2: 全部填滿，無黑色填充
-            filter_str = "[0:v]scale=1080:-2[top];[1:v]scale=540:-2[bot1];[2:v]scale=540:-2[bot2];[bot1][bot2]hstack=inputs=2[bot];[top][bot]vstack=inputs=2[v]"
+            # 上1下2: 上面一個影片( full width)，下面兩個並排
+            filter_str = '[0:v]scale=-2:540[0s];[1:v]scale=-2:540[1s];[2:v]scale=-2:540[2s];[0s]pad=1920:540:(ow-iw)/2:0[top];[1s][2s]hstack=inputs=2[bot];[top][bot]vstack=inputs=2[v]'
         elif layout == '2t1b':
-            # 上2下1: 全部填滿，無黑色填充
-            filter_str = "[0:v]scale=540:-2[top1];[1:v]scale=540:-2[top2];[top1][top2]hstack=inputs=2[top];[2:v]scale=1080:-2[bot];[top][bot]vstack=inputs=2[v]"
+            # 上2下1: 上面兩個並排，下面一個影片(full width)
+            filter_str = '[0:v]scale=-2:540[0s];[1:v]scale=-2:540[1s];[2:v]scale=-2:540[2s];[0s][1s]hstack=inputs=2[top];[2s]pad=1920:540:(ow-iw)/2:0[bot];[top][bot]vstack=inputs=2[v]'
         else:
-            filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
+            filter_str = '[0:v]scale=-2:1080[0s];[1:v]scale=-2:1080[1s];[2:v]scale=-2:1080[2s];[0s][1s][2s]hstack=inputs=3[v]'
     else:  # 4
-        filter_str = '[0:v][1:v]hstack=inputs=2[r1];[2:v][3:v]hstack=inputs=2[r2];[r1][r2]vstack=inputs=2[v]'
-    
+        filter_str = '[0:v]scale=-2:1080[0s];[1:v]scale=-2:1080[1s];[2:v]scale=-2:1080[2s];[3:v]scale=-2:1080[3s];[0s][1s]hstack=inputs=2[r1];[2s][3s]hstack=inputs=2[r2];[r1][r2]vstack=inputs=2[v]'
+
     cmd = [FFMPEG, '-i', paths[0], '-i', paths[1]]
     if count >= 3: cmd.extend(['-i', paths[2]])
     if count == 4: cmd.extend(['-i', paths[3]])
     cmd.extend(['-filter_complex', filter_str, '-map', '[v]', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path, '-y'])
     
+    print(f"Running: {' '.join(cmd)}")
     result = subprocess.run(cmd, capture_output=True)
-    
+    stderr = result.stderr.decode()
+    print(f"Return code: {result.returncode}")
+    if result.returncode != 0:
+        print(f"STDERR: {stderr[:1000]}")
+
     for p in paths:
         if os.path.exists(p): os.remove(p)
-    
+
     print(f"layout: {layout}, returncode: {result.returncode}")
     if result.returncode != 0:
         print(f"stderr: {result.stderr.decode()[:500]}")
         return jsonify({'success': False, 'error': result.stderr.decode()[:200]})
-    
+
     return jsonify({'success': True, 'video_id': video_id})
 
 @app.route('/download/<video_id>')
