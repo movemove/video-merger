@@ -179,7 +179,8 @@
             formData.append('count', count);
             formData.append('layout', layout);
             formData.append('includeAudio', document.getElementById('includeAudio').checked);
-            formData.append('includeSubtitles', document.getElementById('includeSubtitles').checked);
+            
+            alert('即將發送請求到伺服器...');
             
             document.getElementById('mergeBtn').disabled = true;
             document.getElementById('status').textContent = '處理中...';
