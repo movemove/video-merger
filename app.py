@@ -19,7 +19,6 @@ os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
 
 FFMPEG = '/home/linuxbrew/.linuxbrew/bin/ffmpeg'
 
-# Log all requests with details
 @app.before_request
 def log_request():
     ip = request.headers.get('X-Forwarded-For', request.remote_addr)
@@ -54,46 +53,51 @@ def merge():
     
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
     
-    # Build filters
+    # Simple ffmpeg command - use -filter_complex with pad
     if count == 2:
         if layout == 'vstack':
-            filter_str = '[0:v][1:v]vstack=inputs=2[v]'
+            #上下
+            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], 
+                   '-filter_complex', '[0:v][1:v]vstack=inputs=2:shortest=1[v]',
+                   '-map', '[v]']
         else:
-            filter_str = '[0:v][1:v]hstack=inputs=2[v]'
+            #左右
+            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1],
+                   '-filter_complex', '[0:v][1:v]hstack=inputs=2:shortest=1[v]',
+                   '-map', '[v]']
     elif count == 3:
         if layout == '3h':
-            filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
+            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
+                   '-filter_complex', '[0:v][1:v][2:v]hstack=inputs=3:shortest=1[v]',
+                   '-map', '[v]']
         elif layout == '3v':
-            filter_str = '[0:v][1:v][2:v]vstack=inputs=3[v]'
+            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
+                   '-filter_complex', '[0:v][1:v][2:v]vstack=inputs=3:shortest=1[v]',
+                   '-map', '[v]']
         elif layout == '1t2b':
-            filter_str = "[0:v]scale=1080:-2[top];[1:v]scale=540:-2[bot1];[2:v]scale=540:-2[bot2];[bot1][bot2]hstack=inputs=2[bot];[top][bot]vstack=inputs=2[v]"
+            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
+                   '-filter_complex', '[0:v]scale=iw:ih[top];[1:v][2:v]hstack=inputs=2[bot];[top][bot]vstack=inputs=2:shortest=1[v]',
+                   '-map', '[v]']
         elif layout == '2t1b':
-            filter_str = "[0:v]scale=540:-2[top1];[1:v]scale=540:-2[top2];[top1][top2]hstack=inputs=2[top];[2:v]scale=1080:-2[bot];[top][bot]vstack=inputs=2[v]"
+            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
+                   '-filter_complex', '[0:v][1:v]hstack=inputs=2[top];[2:v]scale=iw:ih[bot];[top][bot]vstack=inputs=2:shortest=1[v]',
+                   '-map', '[v]']
         else:
-            filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
+            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
+                   '-filter_complex', '[0:v][1:v][2:v]hstack=inputs=3:shortest=1[v]',
+                   '-map', '[v]']
     else:  # 4
-        filter_str = '[0:v][1:v]hstack=inputs=2[r1];[2:v][3:v]hstack=inputs=2[r2];[r1][r2]vstack=inputs=2[v]'
+        cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2], '-i', paths[3],
+               '-filter_complex', '[0:v][1:v]hstack=inputs=2[top];[2:v][3:v]hstack=inputs=2[bot];[top][bot]vstack=inputs=2:shortest=1[v]',
+               '-map', '[v]']
     
-    # Build ffmpeg command - simple version
-    cmd = [FFMPEG]
-    
-    for p in paths:
-        cmd.extend(['-i', p])
-    
-    # Video filter
-    cmd.extend(['-filter_complex', filter_str])
-    
-    # Map video
-    cmd.extend(['-map', '[v]'])
-    
-    # Audio handling
+    # Audio
     if include_audio:
-        # Use first video's audio
         cmd.extend(['-map', '0:a'])
     else:
         cmd.extend(['-an'])
     
-    # Subtitle handling  
+    # Subtitles
     if not include_subtitles:
         cmd.extend(['-sn'])
     
@@ -104,17 +108,16 @@ def merge():
     
     cmd.extend([output_path, '-y'])
     
-    print("FFmpeg cmd:", ' '.join(cmd[:15]) + '...')
+    print("Running:", ' '.join(cmd[:10]))
     result = subprocess.run(cmd, capture_output=True)
     
     for p in paths:
         if os.path.exists(p): os.remove(p)
     
-    print(f"layout: {layout}, include_audio: {include_audio}, returncode: {result.returncode}")
     if result.returncode != 0:
-        err = result.stderr.decode()[:500]
-        print(f"stderr: {err}")
-        return jsonify({'success': False, 'error': err})
+        err = result.stderr.decode()
+        print("FFmpeg error:", err[:300])
+        return jsonify({'success': False, 'error': err[:200]})
     
     return jsonify({'success': True, 'video_id': video_id})
 
