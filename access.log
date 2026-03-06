@@ -785,3 +785,10 @@
 2026-03-06 21:09:49,094 - 127.0.0.1 - - [06/Mar/2026 21:09:49] "[35m[1mGET /download/d16f9eb9-0e84-4998-863b-20ad3c1dd42f HTTP/1.1[0m" 206 -
 2026-03-06 21:10:24,676 - HEAD / - IP: 49.213.184.219
 2026-03-06 21:10:24,676 - 127.0.0.1 - - [06/Mar/2026 21:10:24] "HEAD / HTTP/1.1" 200 -
+2026-03-06 21:12:21,593 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-06 21:12:21,593 - [33mPress CTRL+C to quit[0m
+2026-03-06 21:12:23,556 - HEAD / - IP: 49.213.184.219
+2026-03-06 21:12:23,560 - 127.0.0.1 - - [06/Mar/2026 21:12:23] "HEAD / HTTP/1.1" 200 -
