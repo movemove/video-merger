@@ -555,3 +555,31 @@
 2026-03-06 20:22:33,557 - 127.0.0.1 - - [06/Mar/2026 20:22:33] "POST /merge HTTP/1.1" 200 -
 2026-03-06 20:23:02,267 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
 2026-03-06 20:23:02,268 - 127.0.0.1 - - [06/Mar/2026 20:23:02] "HEAD / HTTP/1.1" 200 -
+2026-03-06 20:23:54,569 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-06 20:23:54,569 - [33mPress CTRL+C to quit[0m
+2026-03-06 20:23:57,533 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 20:23:57,535 - 127.0.0.1 - - [06/Mar/2026 20:23:57] "HEAD / HTTP/1.1" 200 -
+2026-03-06 20:25:40,664 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-06 20:25:40,664 - [33mPress CTRL+C to quit[0m
+2026-03-06 20:25:43,629 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 20:25:43,634 - 127.0.0.1 - - [06/Mar/2026 20:25:43] "HEAD / HTTP/1.1" 200 -
+2026-03-06 20:26:22,412 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Mobile/23D8133 Safari/604.1
+2026-03-06 20:26:22,414 - 127.0.0.1 - - [06/Mar/2026 20:26:22] "[36mGET / HTTP/1.1[0m" 304 -
+2026-03-06 20:26:42,362 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'hstack', 'includeAudio': 'true', 'includeSubtitles': 'true'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Mobile/23D8133 Safari/604.1
+2026-03-06 20:26:42,491 - 127.0.0.1 - - [06/Mar/2026 20:26:42] "POST /merge HTTP/1.1" 200 -
+2026-03-06 20:26:57,271 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 20:26:57,272 - 127.0.0.1 - - [06/Mar/2026 20:26:57] "GET / HTTP/1.1" 200 -
+2026-03-06 20:26:58,439 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 20:26:58,440 - 127.0.0.1 - - [06/Mar/2026 20:26:58] "GET / HTTP/1.1" 200 -
+2026-03-06 20:27:14,567 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2'] - Form: {'count': '2', 'layout': 'hstack', 'includeAudio': 'true', 'includeSubtitles': 'true'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 20:27:14,678 - 127.0.0.1 - - [06/Mar/2026 20:27:14] "POST /merge HTTP/1.1" 200 -
+2026-03-06 20:27:56,540 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 20:27:56,540 - 127.0.0.1 - - [06/Mar/2026 20:27:56] "HEAD / HTTP/1.1" 200 -
+2026-03-06 20:29:29,820 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 20:29:29,820 - 127.0.0.1 - - [06/Mar/2026 20:29:29] "HEAD / HTTP/1.1" 200 -

@@ -18,6 +18,7 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
 
 FFMPEG = '/home/linuxbrew/.linuxbrew/bin/ffmpeg'
+FFPROBE = '/home/linuxbrew/.linuxbrew/bin/ffprobe'
 
 @app.before_request
 def log_request():
@@ -32,6 +33,24 @@ def log_request():
 @app.route('/')
 def index():
     return send_file('templates/index.html')
+
+def get_audio_stream(path):
+    """Find the best audio stream (aac)"""
+    try:
+        result = subprocess.run(
+            [FFPROBE, '-v', 'error', '-select_streams', 'a:0', 
+             '-show_entries', 'stream=index,codec_name', '-of', 'csv=p=0', path],
+            capture_output=True, text=True, timeout=10
+        )
+        for line in result.stdout.strip().split('\n'):
+            if 'aac' in line:
+                return line.split(',')[0]  # Return stream index
+        # If no aac, return first audio stream
+        if result.stdout.strip():
+            return result.stdout.strip().split(',')[0]
+    except:
+        pass
+    return None
 
 @app.route('/merge', methods=['POST'])
 def merge():
@@ -53,46 +72,41 @@ def merge():
     
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
     
-    # Simple ffmpeg command - use -filter_complex with pad
+    # Get audio stream from first video
+    audio_stream = get_audio_stream(paths[0]) if include_audio else None
+    
+    # Build filters
     if count == 2:
         if layout == 'vstack':
-            #上下
-            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], 
-                   '-filter_complex', '[0:v][1:v]vstack=inputs=2:shortest=1[v]',
-                   '-map', '[v]']
+            filter_str = '[0:v][1:v]vstack=inputs=2:shortest=1[v]'
         else:
-            #左右
-            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1],
-                   '-filter_complex', '[0:v][1:v]hstack=inputs=2:shortest=1[v]',
-                   '-map', '[v]']
+            filter_str = '[0:v][1:v]hstack=inputs=2:shortest=1[v]'
     elif count == 3:
         if layout == '3h':
-            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
-                   '-filter_complex', '[0:v][1:v][2:v]hstack=inputs=3:shortest=1[v]',
-                   '-map', '[v]']
+            filter_str = '[0:v][1:v][2:v]hstack=inputs=3:shortest=1[v]'
         elif layout == '3v':
-            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
-                   '-filter_complex', '[0:v][1:v][2:v]vstack=inputs=3:shortest=1[v]',
-                   '-map', '[v]']
+            filter_str = '[0:v][1:v][2:v]vstack=inputs=3:shortest=1[v]'
         elif layout == '1t2b':
-            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
-                   '-filter_complex', '[0:v]scale=iw:ih[top];[1:v][2:v]hstack=inputs=2[bot];[top][bot]vstack=inputs=2:shortest=1[v]',
-                   '-map', '[v]']
+            filter_str = '[0:v]scale=iw:ih[top];[1:v][2:v]hstack=inputs=2[bot];[top][bot]vstack=inputs=2:shortest=1[v]'
         elif layout == '2t1b':
-            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
-                   '-filter_complex', '[0:v][1:v]hstack=inputs=2[top];[2:v]scale=iw:ih[bot];[top][bot]vstack=inputs=2:shortest=1[v]',
-                   '-map', '[v]']
+            filter_str = '[0:v][1:v]hstack=inputs=2[top];[2:v]scale=iw:ih[bot];[top][bot]vstack=inputs=2:shortest=1[v]'
         else:
-            cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2],
-                   '-filter_complex', '[0:v][1:v][2:v]hstack=inputs=3:shortest=1[v]',
-                   '-map', '[v]']
+            filter_str = '[0:v][1:v][2:v]hstack=inputs=3:shortest=1[v]'
     else:  # 4
-        cmd = [FFMPEG, '-i', paths[0], '-i', paths[1], '-i', paths[2], '-i', paths[3],
-               '-filter_complex', '[0:v][1:v]hstack=inputs=2[top];[2:v][3:v]hstack=inputs=2[bot];[top][bot]vstack=inputs=2:shortest=1[v]',
-               '-map', '[v]']
+        filter_str = '[0:v][1:v]hstack=inputs=2[top];[2:v][3:v]hstack=inputs=2[bot];[top][bot]vstack=inputs=2:shortest=1[v]'
+    
+    # Build command
+    cmd = [FFMPEG, '-y']
+    for p in paths:
+        cmd.extend(['-i', p])
+    
+    # Filter
+    cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
     
     # Audio
-    if include_audio:
+    if include_audio and audio_stream:
+        cmd.extend(['-map', f'0:a:{audio_stream}'])
+    elif include_audio:
         cmd.extend(['-map', '0:a'])
     else:
         cmd.extend(['-an'])
@@ -106,9 +120,9 @@ def merge():
     if include_audio:
         cmd.extend(['-c:a', 'aac', '-b:a', '128k'])
     
-    cmd.extend([output_path, '-y'])
+    cmd.extend([output_path])
     
-    print("Running:", ' '.join(cmd[:10]))
+    print("Running:", ' '.join(cmd[:12]))
     result = subprocess.run(cmd, capture_output=True)
     
     for p in paths:
@@ -116,7 +130,7 @@ def merge():
     
     if result.returncode != 0:
         err = result.stderr.decode()
-        print("FFmpeg error:", err[:300])
+        print("Error:", err[:300])
         return jsonify({'success': False, 'error': err[:200]})
     
     return jsonify({'success': True, 'video_id': video_id})
