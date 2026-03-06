@@ -106,8 +106,18 @@ def merge():
             else:
                 filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[0s][1s]hstack=shortest=1[v]'
         elif count == 3:
-            # All 3-video layouts: simple horizontal stack
-            filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[2:v]scale=1280:-1[2s];[0s][1s][2s]hstack=inputs=3[v]'
+            # xstack for complex layouts
+            if layout == '1t2b':
+                # 1 top (full width), 2 bottom
+                filter_str = "[0:v][1:v][2:v]xstack=inputs=3:layout=0_0|w0_0|0_h0[v]"
+            elif layout == '2t1b':
+                # 2 top, 1 bottom (full width)
+                filter_str = "[0:v][1:v][2:v]xstack=inputs=3:layout=0_0|w0_0|0_h0[v]"
+            elif layout == '3v':
+                filter_str = "[0:v][1:v][2:v]xstack=inputs=3:layout=0_0|0_h0|0_2h0[v]"
+            else:
+                # Default: 3 horizontal
+                filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[2:v]scale=1280:-1[2s];[0s][1s][2s]hstack=inputs=3[v]'
         else:
             filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[2:v]scale=1280:-1[2s];[3:v]scale=1280:-1[3s];[0s][1s]hstack=shortest=1[top];[2s][3s]hstack=shortest=1[bot];[top][bot]vstack=shortest=1[v]'
         
