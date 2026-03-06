@@ -1098,3 +1098,28 @@
 2026-03-06 21:40:43,185 - [33mPress CTRL+C to quit[0m
 2026-03-06 21:40:46,216 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
 2026-03-06 21:40:46,221 - 127.0.0.1 - - [06/Mar/2026 21:40:46] "HEAD / HTTP/1.1" 200 -
+2026-03-06 21:41:31,455 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 21:41:31,457 - 127.0.0.1 - - [06/Mar/2026 21:41:31] "GET / HTTP/1.1" 200 -
+2026-03-06 21:41:56,181 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-06 21:41:56,467 - 127.0.0.1 - - [06/Mar/2026 21:41:56] "POST /merge HTTP/1.1" 200 -
+2026-03-06 21:42:38,998 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-06 21:42:38,998 - 127.0.0.1 - - [06/Mar/2026 21:42:38] "HEAD / HTTP/1.1" 200 -
+2026-03-06 21:44:05,727 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-06 21:44:05,727 - [33mPress CTRL+C to quit[0m
+2026-03-06 21:44:08,764 - HEAD / - IP: 49.213.184.219
+2026-03-06 21:44:08,770 - 127.0.0.1 - - [06/Mar/2026 21:44:08] "HEAD / HTTP/1.1" 200 -
+2026-03-06 21:44:41,620 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'}
+2026-03-06 21:44:41,835 - 127.0.0.1 - - [06/Mar/2026 21:44:41] "POST /merge HTTP/1.1" 200 -
+2026-03-06 21:44:48,275 - GET / - IP: 49.213.184.219
+2026-03-06 21:44:48,276 - 127.0.0.1 - - [06/Mar/2026 21:44:48] "GET / HTTP/1.1" 200 -
+2026-03-06 21:44:57,974 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'}
+2026-03-06 21:44:58,194 - 127.0.0.1 - - [06/Mar/2026 21:44:58] "POST /merge HTTP/1.1" 200 -
+2026-03-06 21:45:00,071 - GET / - IP: 49.213.184.219
+2026-03-06 21:45:00,072 - 127.0.0.1 - - [06/Mar/2026 21:45:00] "GET / HTTP/1.1" 200 -
+2026-03-06 21:45:25,258 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'}
+2026-03-06 21:45:25,458 - 127.0.0.1 - - [06/Mar/2026 21:45:25] "POST /merge HTTP/1.1" 200 -
+2026-03-06 21:46:23,793 - HEAD / - IP: 49.213.184.219
+2026-03-06 21:46:23,794 - 127.0.0.1 - - [06/Mar/2026 21:46:23] "HEAD / HTTP/1.1" 200 -
