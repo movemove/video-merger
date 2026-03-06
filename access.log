@@ -1123,3 +1123,14 @@
 2026-03-06 21:45:25,458 - 127.0.0.1 - - [06/Mar/2026 21:45:25] "POST /merge HTTP/1.1" 200 -
 2026-03-06 21:46:23,793 - HEAD / - IP: 49.213.184.219
 2026-03-06 21:46:23,794 - 127.0.0.1 - - [06/Mar/2026 21:46:23] "HEAD / HTTP/1.1" 200 -
+2026-03-06 21:46:40,571 - HEAD / - IP: 49.213.184.219
+2026-03-06 21:46:40,571 - 127.0.0.1 - - [06/Mar/2026 21:46:40] "HEAD / HTTP/1.1" 200 -
+2026-03-06 21:47:22,919 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-06 21:47:22,919 - [33mPress CTRL+C to quit[0m
+2026-03-06 21:47:25,877 - HEAD / - IP: 49.213.184.219
+2026-03-06 21:47:25,882 - 127.0.0.1 - - [06/Mar/2026 21:47:25] "HEAD / HTTP/1.1" 200 -
+2026-03-06 21:47:34,383 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'}
+2026-03-06 21:47:34,834 - 127.0.0.1 - - [06/Mar/2026 21:47:34] "POST /merge HTTP/1.1" 200 -
