@@ -54,7 +54,7 @@ def merge():
     
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
     
-    # Build filters - use xstack for complex layouts
+    # Build filters
     if count == 2:
         if layout == 'vstack':
             filter_str = '[0:v][1:v]vstack=inputs=2[v]'
@@ -66,52 +66,55 @@ def merge():
         elif layout == '3v':
             filter_str = '[0:v][1:v][2:v]vstack=inputs=3[v]'
         elif layout == '1t2b':
-            # 上1下2: 全部填滿，無黑色填充
             filter_str = "[0:v]scale=1080:-2[top];[1:v]scale=540:-2[bot1];[2:v]scale=540:-2[bot2];[bot1][bot2]hstack=inputs=2[bot];[top][bot]vstack=inputs=2[v]"
         elif layout == '2t1b':
-            # 上2下1: 全部填滿，無黑色填充
             filter_str = "[0:v]scale=540:-2[top1];[1:v]scale=540:-2[top2];[top1][top2]hstack=inputs=2[top];[2:v]scale=1080:-2[bot];[top][bot]vstack=inputs=2[v]"
         else:
             filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
     else:  # 4
         filter_str = '[0:v][1:v]hstack=inputs=2[r1];[2:v][3:v]hstack=inputs=2[r2];[r1][r2]vstack=inputs=2[v]'
     
-    # Build ffmpeg command
-    cmd = [FFMPEG, '-i', paths[0], '-i', paths[1]]
-    if count >= 3: cmd.extend(['-i', paths[2]])
-    if count == 4: cmd.extend(['-i', paths[3]])
+    # Build ffmpeg command - simple version
+    cmd = [FFMPEG]
     
-    # Build mapping
+    for p in paths:
+        cmd.extend(['-i', p])
+    
+    # Video filter
+    cmd.extend(['-filter_complex', filter_str])
+    
+    # Map video
+    cmd.extend(['-map', '[v]'])
+    
+    # Audio handling
     if include_audio:
         # Use first video's audio
-        cmd.extend(['-map', '0:v', '-map', '1:a'])
-        if count >= 3: cmd.extend(['-map', '2:a'])
-        if count == 4: cmd.extend(['-map', '3:a'])
+        cmd.extend(['-map', '0:a'])
     else:
-        cmd.extend(['-map', '[v]', '-an'])
+        cmd.extend(['-an'])
     
+    # Subtitle handling  
     if not include_subtitles:
-        cmd.extend(['-s:s', 'mov_text'])
+        cmd.extend(['-sn'])
     
-    cmd.extend(['-filter_complex', filter_str, '-c:v', 'libx264', '-preset', 'fast', '-crf', '23'])
-    
-    if not include_audio:
-        cmd.append('-c:a')
-        cmd.append('aac')
-        cmd.append('-b:a')
-        cmd.append('128k')
+    # Codecs
+    cmd.extend(['-c:v', 'libx264', '-preset', 'fast', '-crf', '23'])
+    if include_audio:
+        cmd.extend(['-c:a', 'aac', '-b:a', '128k'])
     
     cmd.extend([output_path, '-y'])
     
+    print("FFmpeg cmd:", ' '.join(cmd[:15]) + '...')
     result = subprocess.run(cmd, capture_output=True)
     
     for p in paths:
         if os.path.exists(p): os.remove(p)
     
-    print(f"layout: {layout}, returncode: {result.returncode}")
+    print(f"layout: {layout}, include_audio: {include_audio}, returncode: {result.returncode}")
     if result.returncode != 0:
-        print(f"stderr: {result.stderr.decode()[:500]}")
-        return jsonify({'success': False, 'error': result.stderr.decode()[:200]})
+        err = result.stderr.decode()[:500]
+        print(f"stderr: {err}")
+        return jsonify({'success': False, 'error': err})
     
     return jsonify({'success': True, 'video_id': video_id})
 
