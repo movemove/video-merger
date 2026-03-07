@@ -100,7 +100,7 @@ def merge():
     cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
     
     if include_audio:
-        cmd.extend(['-map', '0:a', '-c:a', 'aac', '-b:a', '128k'])
+        cmd.extend(['-map', '0:a?', '-c:a', 'aac', '-b:a', '128k'])
     else:
         cmd.extend(['-an'])
     
