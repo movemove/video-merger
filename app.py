@@ -38,7 +38,6 @@ def index():
 def merge():
     count = int(request.form.get('count', 2))
     layout = request.form.get('layout', 'hstack')
-    include_audio = request.form.get('includeAudio', 'true') == 'true'
     
     video_id = str(uuid.uuid4())
     paths = []
@@ -53,65 +52,36 @@ def merge():
     
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
     
-    # Stage 1: Convert each video to standard format
-    converted_paths = []
-    for i, p in enumerate(paths):
-        converted = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_conv_{i}.mp4')
-        cmd = [
-            FFMPEG, '-y', '-i', p,
-            '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
-            '-c:a', 'aac', '-b:a', '128k',
-            converted
-        ]
-        result = subprocess.run(cmd, capture_output=True, timeout=60)
-        if result.returncode != 0:
-            # Try without audio if conversion fails
-            cmd = [
-                FFMPEG, '-y', '-i', p,
-                '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
-                '-an', converted
-            ]
-            result = subprocess.run(cmd, capture_output=True, timeout=60)
-        converted_paths.append(converted)
-    
-    # Stage 2: Apply stacking filters (same as original version)
+    # Build filters - scale videos to same resolution first, then stack
     if count == 2:
         if layout == 'vstack':
-            filter_str = '[0:v][1:v]vstack=inputs=2[v]'
+            # Scale both to same width (1080p)
+            filter_str = '[0:v]scale=1080:-2[0s];[1:v]scale=1080:-2[1s];[0s][1s]vstack=shortest=1[v]'
         else:
-            filter_str = '[0:v][1:v]hstack=inputs=2[v]'
+            # Scale both to same height (1080p)
+            filter_str = '[0:v]scale=-2:1920[0s];[1:v]scale=-2:1920[1s];[0s][1s]hstack=shortest=1[v]'
     elif count == 3:
         if layout == '3h':
-            filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
+            filter_str = '[0:v]scale=-2:1920[0s];[1:v]scale=-2:1920[1s];[2:v]scale=-2:1920[2s];[0s][1s][2s]hstack=inputs=3[v]'
         elif layout == '3v':
-            filter_str = '[0:v][1:v][2:v]vstack=inputs=3[v]'
+            filter_str = '[0:v]scale=1080:-2[0s];[1:v]scale=1080:-2[1s];[2:v]scale=1080:-2[2s];[0s][1s][2s]vstack=inputs=3[v]'
         elif layout == '1t2b':
             filter_str = "[0:v]scale=1080:-2[top];[1:v]scale=540:-2[bot1];[2:v]scale=540:-2[bot2];[bot1][bot2]hstack=inputs=2[bot];[top][bot]vstack=inputs=2[v]"
         elif layout == '2t1b':
             filter_str = "[0:v]scale=540:-2[top1];[1:v]scale=540:-2[top2];[top1][top2]hstack=inputs=2[top];[2:v]scale=1080:-2[bot];[top][bot]vstack=inputs=2[v]"
         else:
-            filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
+            filter_str = '[0:v]scale=-2:1920[0s];[1:v]scale=-2:1920[1s];[2:v]scale=-2:1920[2s];[0s][1s][2s]hstack=inputs=3[v]'
     else:  # 4
-        filter_str = '[0:v][1:v]hstack=inputs=2[r1];[2:v][3:v]hstack=inputs=2[r2];[r1][r2]vstack=inputs=2[v]'
+        filter_str = '[0:v]scale=-2:1920[0s];[1:v]scale=-2:1920[1s];[2:v]scale=-2:1920[2s];[3:v]scale=-2:1920[3s];[0s][1s]hstack=shortest=1[top];[2s][3s]hstack=shortest=1[bot];[top][bot]vstack=shortest=1[v]'
     
-    cmd = [FFMPEG, '-y']
-    for p in converted_paths:
-        cmd.extend(['-i', p])
-    cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
-    
-    if include_audio:
-        cmd.extend(['-map', '0:a?', '-c:a', 'aac', '-b:a', '128k'])
-    else:
-        cmd.extend(['-an'])
-    
-    cmd.extend(['-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path, '-y'])
+    cmd = [FFMPEG, '-i', paths[0], '-i', paths[1]]
+    if count >= 3: cmd.extend(['-i', paths[2]])
+    if count == 4: cmd.extend(['-i', paths[3]])
+    cmd.extend(['-filter_complex', filter_str, '-map', '[v]', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path, '-y'])
     
     result = subprocess.run(cmd, capture_output=True)
     
-    # Cleanup
     for p in paths:
-        if os.path.exists(p): os.remove(p)
-    for p in converted_paths:
         if os.path.exists(p): os.remove(p)
     
     print(f"layout: {layout}, returncode: {result.returncode}")
