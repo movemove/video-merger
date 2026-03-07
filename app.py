@@ -5,6 +5,7 @@ import subprocess
 import logging
 from flask import Flask, request, send_file, jsonify
 
+# Setup logging
 logging.basicConfig(filename='/home/alice/.openclaw/workspace/double_video/access.log', 
                     level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger()
@@ -18,13 +19,16 @@ os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
 
 FFMPEG = '/home/linuxbrew/.linuxbrew/bin/ffmpeg'
 
+# Log all requests with details
 @app.before_request
 def log_request():
     ip = request.headers.get('X-Forwarded-For', request.remote_addr)
     details = ""
     if request.path == '/merge' and request.method == 'POST':
         details = f" - Files: {list(request.files.keys())} - Form: {dict(request.form)}"
-    logger.info(f"{request.method} {request.path} - IP: {ip}{details}")
+    elif request.path.startswith('/download/'):
+        details = f" - FileID: {request.path.split('/')[-1]}"
+    logger.info(f"{request.method} {request.path} - IP: {ip}{details} - UA: {request.headers.get('User-Agent', 'N/A')}")
 
 @app.route('/')
 def index():
@@ -34,7 +38,6 @@ def index():
 def merge():
     count = int(request.form.get('count', 2))
     layout = request.form.get('layout', 'hstack')
-    include_audio = request.form.get('includeAudio', 'true') == 'true'
     
     video_id = str(uuid.uuid4())
     paths = []
@@ -49,121 +52,44 @@ def merge():
     
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
     
-    # Simple approach - no complex filters, just concatenate video streams
-    try:
-        # Step 1: Convert each video to standard mp4 first
-        print("Converting videos to standard format...")
-        converted_paths = []
-        for i, p in enumerate(paths):
-            converted = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_conv_{i}.mp4')
-            cmd = [
-                FFMPEG, '-y', '-i', p,
-                '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
-                '-c:a', 'aac', '-b:a', '128k',
-                '-movflags', '+faststart',
-                converted
-            ]
-            result = subprocess.run(cmd, capture_output=True, timeout=60)
-            if result.returncode != 0:
-                # Try without audio if conversion fails
-                cmd = [
-                    FFMPEG, '-y', '-i', p,
-                    '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
-                    '-an', '-movflags', '+faststart',
-                    converted
-                ]
-                result = subprocess.run(cmd, capture_output=True, timeout=60)
-            converted_paths.append(converted)
-            print(f"Converted {i+1}/{count}")
-        
-        # Get duration of first video
-        result = subprocess.run(
-            [FFMPEG, '-i', converted_paths[0], '-f', 'null', '-'],
-            capture_output=True, timeout=30
-        )
-        # Extract duration from stderr
-        duration = None
-        for line in result.stderr.decode().split('\n'):
-            if 'Duration:' in line:
-                try:
-                    duration = line.split('Duration:')[1].split(',')[0].strip()
-                except:
-                    pass
-        
-        print(f"Merging {count} videos, layout={layout}, audio={include_audio}, duration={duration}")
-        
-        # Build simple ffmpeg command
-        cmd = [FFMPEG, '-y']
-        
-        # Input files
-        for p in converted_paths:
-            cmd.extend(['-i', p])
-        
-        # Filter for stacking - scale to same resolution first
-        if count == 2:
-            if layout == 'vstack':
-                filter_str = '[0:v]scale=-1:1920[0s];[1:v]scale=-1:1920[1s];[0s][1s]vstack=shortest=1[v]'
-            else:
-                filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[0s][1s]hstack=shortest=1[v]'
-        elif count == 3:
-            # xstack for complex layouts
-            if layout == '1t2b':
-                # 1 top (full width), 2 bottom
-                filter_str = "[0:v][1:v][2:v]xstack=inputs=3:layout=0_0|w0_0|0_h0[v]"
-            elif layout == '2t1b':
-                # 2 top, 1 bottom (full width)
-                filter_str = "[0:v][1:v][2:v]xstack=inputs=3:layout=0_0|w0_0|0_h0[v]"
-            elif layout == '3v':
-                filter_str = "[0:v][1:v][2:v]xstack=inputs=3:layout=0_0|0_h0|0_2h0[v]"
-            else:
-                # Default: 3 horizontal
-                filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[2:v]scale=1280:-1[2s];[0s][1s][2s]hstack=inputs=3[v]'
+    # Build filters - use xstack for complex layouts
+    if count == 2:
+        if layout == 'vstack':
+            filter_str = '[0:v][1:v]vstack=inputs=2[v]'
         else:
-            filter_str = '[0:v]scale=1280:-1[0s];[1:v]scale=1280:-1[1s];[2:v]scale=1280:-1[2s];[3:v]scale=1280:-1[3s];[0s][1s]hstack=shortest=1[top];[2s][3s]hstack=shortest=1[bot];[top][bot]vstack=shortest=1[v]'
-        
-        cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
-        
-        if include_audio:
-            cmd.extend(['-map', '0:a', '-c:a', 'aac', '-b:a', '128k'])
+            filter_str = '[0:v][1:v]hstack=inputs=2[v]'
+    elif count == 3:
+        if layout == '3h':
+            filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
+        elif layout == '3v':
+            filter_str = '[0:v][1:v][2:v]vstack=inputs=3[v]'
+        elif layout == '1t2b':
+            # 上1下2: 全部填滿，無黑色填充
+            filter_str = "[0:v]scale=1080:-2[top];[1:v]scale=540:-2[bot1];[2:v]scale=540:-2[bot2];[bot1][bot2]hstack=inputs=2[bot];[top][bot]vstack=inputs=2[v]"
+        elif layout == '2t1b':
+            # 上2下1: 全部填滿，無黑色填充
+            filter_str = "[0:v]scale=540:-2[top1];[1:v]scale=540:-2[top2];[top1][top2]hstack=inputs=2[top];[2:v]scale=1080:-2[bot];[top][bot]vstack=inputs=2[v]"
         else:
-            cmd.extend(['-an'])
-        
-        cmd.extend(['-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path])
-        
-        print("Running:", ' '.join(cmd[:12]))
-        print("Full cmd:", ' '.join(cmd))
-        result = subprocess.run(cmd, capture_output=True, timeout=120)
-        stderr = result.stderr.decode()
-        if result.returncode != 0:
-            print("Full FFmpeg error:", stderr[:2000])
-        
-        for p in converted_paths:
-            if os.path.exists(p): os.remove(p)
-        
-        if result.returncode != 0:
-            err = result.stderr.decode()
-            print("FFmpeg error:", stderr[:2000] if stderr else err[:500])
-            return jsonify({'success': False, 'error': err[:200]})
-        
-        # Cleanup original files
-        for p in paths:
-            if os.path.exists(p): os.remove(p)
-        
-        # Check output file
-        if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
-            return jsonify({'success': False, 'error': 'Output file is empty'})
-        
-        print(f"Success! Output size: {os.path.getsize(output_path)}")
-        return jsonify({'success': True, 'video_id': video_id})
-        
-    except subprocess.TimeoutExpired:
-        for p in converted_paths:
-            if os.path.exists(p): os.remove(p)
-        return jsonify({'success': False, 'error': '處理超時'})
-    except Exception as e:
-        for p in converted_paths:
-            if os.path.exists(p): os.remove(p)
-        return jsonify({'success': False, 'error': str(e)})
+            filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
+    else:  # 4
+        filter_str = '[0:v][1:v]hstack=inputs=2[r1];[2:v][3:v]hstack=inputs=2[r2];[r1][r2]vstack=inputs=2[v]'
+    
+    cmd = [FFMPEG, '-i', paths[0], '-i', paths[1]]
+    if count >= 3: cmd.extend(['-i', paths[2]])
+    if count == 4: cmd.extend(['-i', paths[3]])
+    cmd.extend(['-filter_complex', filter_str, '-map', '[v]', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path, '-y'])
+    
+    result = subprocess.run(cmd, capture_output=True)
+    
+    for p in paths:
+        if os.path.exists(p): os.remove(p)
+    
+    print(f"layout: {layout}, returncode: {result.returncode}")
+    if result.returncode != 0:
+        print(f"stderr: {result.stderr.decode()[:500]}")
+        return jsonify({'success': False, 'error': result.stderr.decode()[:200]})
+    
+    return jsonify({'success': True, 'video_id': video_id})
 
 @app.route('/download/<video_id>')
 def download(video_id):
@@ -171,7 +97,7 @@ def download(video_id):
 
 if __name__ == '__main__':
     print("=" * 50)
-    print("🎬 多影片合併")
+    print("🎬 多影片合併（並排）")
     print("https://video.chiangkevin.com")
     print("=" * 50)
     app.run(host='0.0.0.0', port=5001, debug=False)

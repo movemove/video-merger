@@ -1294,3 +1294,56 @@
 2026-03-06 22:18:25,703 - [33mPress CTRL+C to quit[0m
 2026-03-06 22:18:28,672 - HEAD / - IP: 49.213.184.219
 2026-03-06 22:18:28,675 - 127.0.0.1 - - [06/Mar/2026 22:18:28] "HEAD / HTTP/1.1" 200 -
+2026-03-06 22:19:16,445 - HEAD / - IP: 49.213.184.219
+2026-03-06 22:19:16,445 - 127.0.0.1 - - [06/Mar/2026 22:19:16] "HEAD / HTTP/1.1" 200 -
+2026-03-06 22:19:48,163 - GET / - IP: 49.213.184.219
+2026-03-06 22:19:48,164 - 127.0.0.1 - - [06/Mar/2026 22:19:48] "GET / HTTP/1.1" 200 -
+2026-03-06 22:20:05,704 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'}
+2026-03-06 22:20:13,409 - 127.0.0.1 - - [06/Mar/2026 22:20:13] "POST /merge HTTP/1.1" 200 -
+2026-03-06 22:20:13,582 - GET /download/78495586-693f-4fc0-902a-c20ac51850c6 - IP: 49.213.184.219
+2026-03-06 22:20:13,584 - 127.0.0.1 - - [06/Mar/2026 22:20:13] "[35m[1mGET /download/78495586-693f-4fc0-902a-c20ac51850c6 HTTP/1.1[0m" 206 -
+2026-03-06 22:20:13,624 - GET /download/78495586-693f-4fc0-902a-c20ac51850c6 - IP: 49.213.184.219
+2026-03-06 22:20:13,625 - 127.0.0.1 - - [06/Mar/2026 22:20:13] "[35m[1mGET /download/78495586-693f-4fc0-902a-c20ac51850c6 HTTP/1.1[0m" 206 -
+2026-03-06 22:20:13,724 - GET /download/78495586-693f-4fc0-902a-c20ac51850c6 - IP: 49.213.184.219
+2026-03-06 22:20:13,725 - 127.0.0.1 - - [06/Mar/2026 22:20:13] "[35m[1mGET /download/78495586-693f-4fc0-902a-c20ac51850c6 HTTP/1.1[0m" 206 -
+2026-03-06 22:20:13,825 - GET /download/78495586-693f-4fc0-902a-c20ac51850c6 - IP: 49.213.184.219
+2026-03-06 22:20:13,826 - 127.0.0.1 - - [06/Mar/2026 22:20:13] "[35m[1mGET /download/78495586-693f-4fc0-902a-c20ac51850c6 HTTP/1.1[0m" 206 -
+2026-03-07 08:17:15,005 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-07 08:17:15,005 - [33mPress CTRL+C to quit[0m
+2026-03-07 08:17:18,015 - HEAD / - IP: 49.213.184.219
+2026-03-07 08:17:18,018 - 127.0.0.1 - - [07/Mar/2026 08:17:18] "HEAD / HTTP/1.1" 200 -
+2026-03-07 08:18:28,666 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-07 08:18:28,666 - [33mPress CTRL+C to quit[0m
+2026-03-07 08:18:30,627 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-07 08:18:30,632 - 127.0.0.1 - - [07/Mar/2026 08:18:30] "HEAD / HTTP/1.1" 200 -
+2026-03-07 08:19:39,711 - GET / - IP: 49.213.184.219 - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-07 08:19:39,713 - 127.0.0.1 - - [07/Mar/2026 08:19:39] "GET / HTTP/1.1" 200 -
+2026-03-07 08:19:40,246 - GET /apple-touch-icon-precomposed.png - IP: 49.213.184.219 - UA: com.apple.WebKit.Networking/20623.2.7.18.1 Network/4277.140.33.703.1 macOS/15.7.4
+2026-03-07 08:19:40,247 - 127.0.0.1 - - [07/Mar/2026 08:19:40] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2026-03-07 08:19:40,251 - GET /favicon.ico - IP: 49.213.184.219 - UA: com.apple.WebKit.Networking/20623.2.7.18.1 Network/4277.140.33.703.1 macOS/15.7.4
+2026-03-07 08:19:40,252 - 127.0.0.1 - - [07/Mar/2026 08:19:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-07 08:19:40,254 - GET /apple-touch-icon.png - IP: 49.213.184.219 - UA: com.apple.WebKit.Networking/20623.2.7.18.1 Network/4277.140.33.703.1 macOS/15.7.4
+2026-03-07 08:19:40,254 - 127.0.0.1 - - [07/Mar/2026 08:19:40] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2026-03-07 08:20:18,602 - POST /merge - IP: 49.213.184.219 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '1t2b'} - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-07 08:20:24,081 - 127.0.0.1 - - [07/Mar/2026 08:20:24] "POST /merge HTTP/1.1" 200 -
+2026-03-07 08:20:24,165 - GET /download/9f743c37-bbad-425e-af1c-75c388614cb8 - IP: 49.213.184.219 - FileID: 9f743c37-bbad-425e-af1c-75c388614cb8 - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-07 08:20:24,166 - 127.0.0.1 - - [07/Mar/2026 08:20:24] "[35m[1mGET /download/9f743c37-bbad-425e-af1c-75c388614cb8 HTTP/1.1[0m" 206 -
+2026-03-07 08:20:24,192 - GET /download/9f743c37-bbad-425e-af1c-75c388614cb8 - IP: 49.213.184.219 - FileID: 9f743c37-bbad-425e-af1c-75c388614cb8 - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-07 08:20:24,193 - 127.0.0.1 - - [07/Mar/2026 08:20:24] "[35m[1mGET /download/9f743c37-bbad-425e-af1c-75c388614cb8 HTTP/1.1[0m" 206 -
+2026-03-07 08:20:24,280 - GET /download/9f743c37-bbad-425e-af1c-75c388614cb8 - IP: 49.213.184.219 - FileID: 9f743c37-bbad-425e-af1c-75c388614cb8 - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-07 08:20:24,282 - 127.0.0.1 - - [07/Mar/2026 08:20:24] "[35m[1mGET /download/9f743c37-bbad-425e-af1c-75c388614cb8 HTTP/1.1[0m" 206 -
+2026-03-07 08:20:24,347 - GET /download/9f743c37-bbad-425e-af1c-75c388614cb8 - IP: 49.213.184.219 - FileID: 9f743c37-bbad-425e-af1c-75c388614cb8 - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Safari/605.1.15
+2026-03-07 08:20:24,348 - 127.0.0.1 - - [07/Mar/2026 08:20:24] "[35m[1mGET /download/9f743c37-bbad-425e-af1c-75c388614cb8 HTTP/1.1[0m" 206 -
+2026-03-07 10:12:55,322 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-07 10:12:55,322 - [33mPress CTRL+C to quit[0m
+2026-03-07 10:12:58,343 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-07 10:12:58,347 - 127.0.0.1 - - [07/Mar/2026 10:12:58] "HEAD / HTTP/1.1" 200 -
