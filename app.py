@@ -38,6 +38,7 @@ def index():
 def merge():
     count = int(request.form.get('count', 2))
     layout = request.form.get('layout', 'hstack')
+    include_audio = request.form.get('includeAudio', 'true') == 'true'
     
     video_id = str(uuid.uuid4())
     paths = []
@@ -77,7 +78,14 @@ def merge():
     cmd = [FFMPEG, '-i', paths[0], '-i', paths[1]]
     if count >= 3: cmd.extend(['-i', paths[2]])
     if count == 4: cmd.extend(['-i', paths[3]])
-    cmd.extend(['-filter_complex', filter_str, '-map', '[v]', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path, '-y'])
+    cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
+    
+    if include_audio:
+        cmd.extend(['-map', '0:a', '-c:a', 'aac', '-b:a', '128k'])
+    else:
+        cmd.extend(['-an'])
+    
+    cmd.extend(['-c:v', 'libx264', '-preset', 'fast', '-crf', '23', output_path, '-y'])
     
     result = subprocess.run(cmd, capture_output=True)
     
