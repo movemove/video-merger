@@ -53,7 +53,28 @@ def merge():
     
     output_path = os.path.join(app.config['OUTPUT_FOLDER'], f'{video_id}.mp4')
     
-    # Build filters - use xstack for complex layouts
+    # Stage 1: Convert each video to standard format
+    converted_paths = []
+    for i, p in enumerate(paths):
+        converted = os.path.join(app.config['UPLOAD_FOLDER'], f'{video_id}_conv_{i}.mp4')
+        cmd = [
+            FFMPEG, '-y', '-i', p,
+            '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
+            '-c:a', 'aac', '-b:a', '128k',
+            converted
+        ]
+        result = subprocess.run(cmd, capture_output=True, timeout=60)
+        if result.returncode != 0:
+            # Try without audio if conversion fails
+            cmd = [
+                FFMPEG, '-y', '-i', p,
+                '-c:v', 'libx264', '-preset', 'fast', '-crf', '23',
+                '-an', converted
+            ]
+            result = subprocess.run(cmd, capture_output=True, timeout=60)
+        converted_paths.append(converted)
+    
+    # Stage 2: Apply stacking filters (same as original version)
     if count == 2:
         if layout == 'vstack':
             filter_str = '[0:v][1:v]vstack=inputs=2[v]'
@@ -65,19 +86,17 @@ def merge():
         elif layout == '3v':
             filter_str = '[0:v][1:v][2:v]vstack=inputs=3[v]'
         elif layout == '1t2b':
-            # 上1下2: 全部填滿，無黑色填充
             filter_str = "[0:v]scale=1080:-2[top];[1:v]scale=540:-2[bot1];[2:v]scale=540:-2[bot2];[bot1][bot2]hstack=inputs=2[bot];[top][bot]vstack=inputs=2[v]"
         elif layout == '2t1b':
-            # 上2下1: 全部填滿，無黑色填充
             filter_str = "[0:v]scale=540:-2[top1];[1:v]scale=540:-2[top2];[top1][top2]hstack=inputs=2[top];[2:v]scale=1080:-2[bot];[top][bot]vstack=inputs=2[v]"
         else:
             filter_str = '[0:v][1:v][2:v]hstack=inputs=3[v]'
     else:  # 4
         filter_str = '[0:v][1:v]hstack=inputs=2[r1];[2:v][3:v]hstack=inputs=2[r2];[r1][r2]vstack=inputs=2[v]'
     
-    cmd = [FFMPEG, '-i', paths[0], '-i', paths[1]]
-    if count >= 3: cmd.extend(['-i', paths[2]])
-    if count == 4: cmd.extend(['-i', paths[3]])
+    cmd = [FFMPEG, '-y']
+    for p in converted_paths:
+        cmd.extend(['-i', p])
     cmd.extend(['-filter_complex', filter_str, '-map', '[v]'])
     
     if include_audio:
@@ -89,7 +108,10 @@ def merge():
     
     result = subprocess.run(cmd, capture_output=True)
     
+    # Cleanup
     for p in paths:
+        if os.path.exists(p): os.remove(p)
+    for p in converted_paths:
         if os.path.exists(p): os.remove(p)
     
     print(f"layout: {layout}, returncode: {result.returncode}")

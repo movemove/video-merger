@@ -1356,3 +1356,61 @@
 2026-03-07 10:14:49,063 - [33mPress CTRL+C to quit[0m
 2026-03-07 10:14:51,030 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
 2026-03-07 10:14:51,034 - 127.0.0.1 - - [07/Mar/2026 10:14:51] "HEAD / HTTP/1.1" 200 -
+2026-03-07 10:16:19,574 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Mobile/23D8133 Safari/604.1
+2026-03-07 10:16:19,575 - 127.0.0.1 - - [07/Mar/2026 10:16:19] "GET / HTTP/1.1" 200 -
+2026-03-07 10:16:20,238 - GET /favicon.ico - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Telegram/32487 CFNetwork/3860.400.51 Darwin/25.3.0
+2026-03-07 10:16:20,240 - 127.0.0.1 - - [07/Mar/2026 10:16:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-07 10:16:21,847 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:16:21,849 - 127.0.0.1 - - [07/Mar/2026 10:16:21] "GET / HTTP/1.1" 200 -
+2026-03-07 10:16:29,375 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:16:29,377 - 127.0.0.1 - - [07/Mar/2026 10:16:29] "GET / HTTP/1.1" 200 -
+2026-03-07 10:16:32,346 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:16:32,347 - 127.0.0.1 - - [07/Mar/2026 10:16:32] "GET / HTTP/1.1" 200 -
+2026-03-07 10:16:39,707 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:16:39,708 - 127.0.0.1 - - [07/Mar/2026 10:16:39] "GET / HTTP/1.1" 200 -
+2026-03-07 10:17:01,392 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Mobile/23D8133 Safari/604.1
+2026-03-07 10:17:01,393 - 127.0.0.1 - - [07/Mar/2026 10:17:01] "[36mGET / HTTP/1.1[0m" 304 -
+2026-03-07 10:17:03,134 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:17:03,135 - 127.0.0.1 - - [07/Mar/2026 10:17:03] "GET / HTTP/1.1" 200 -
+2026-03-07 10:17:04,387 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:17:04,388 - 127.0.0.1 - - [07/Mar/2026 10:17:04] "GET / HTTP/1.1" 200 -
+2026-03-07 10:17:35,157 - POST /merge - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3h', 'includeAudio': 'true'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:17:35,459 - 127.0.0.1 - - [07/Mar/2026 10:17:35] "POST /merge HTTP/1.1" 200 -
+2026-03-07 10:22:58,698 - POST /merge - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - Files: ['video1', 'video2', 'video3'] - Form: {'count': '3', 'layout': '3h', 'includeAudio': 'true'} - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:22:59,002 - 127.0.0.1 - - [07/Mar/2026 10:22:59] "POST /merge HTTP/1.1" 200 -
+2026-03-07 10:23:27,728 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-07 10:23:27,729 - 127.0.0.1 - - [07/Mar/2026 10:23:27] "HEAD / HTTP/1.1" 200 -
+2026-03-07 10:24:13,178 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-07 10:24:13,178 - [33mPress CTRL+C to quit[0m
+2026-03-07 10:24:15,136 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-07 10:24:15,141 - 127.0.0.1 - - [07/Mar/2026 10:24:15] "HEAD / HTTP/1.1" 200 -
+2026-03-07 10:24:42,938 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-07 10:24:42,939 - 127.0.0.1 - - [07/Mar/2026 10:24:42] "HEAD / HTTP/1.1" 200 -
+2026-03-07 10:29:34,930 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3 Mobile/15E148 Safari/604.1
+2026-03-07 10:29:34,931 - 127.0.0.1 - - [07/Mar/2026 10:29:34] "GET / HTTP/1.1" 200 -
+2026-03-07 10:29:35,039 - GET / - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.4 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.4 facebookexternalhit/1.1 Facebot Twitterbot/1.0
+2026-03-07 10:29:35,041 - 127.0.0.1 - - [07/Mar/2026 10:29:35] "GET / HTTP/1.1" 200 -
+2026-03-07 10:29:35,043 - GET /favicon.ico - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: NetworkingExtension/8623.2.7.10.4 Network/5569.82.5 iOS/26.3.1
+2026-03-07 10:29:35,043 - 127.0.0.1 - - [07/Mar/2026 10:29:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-07 10:29:35,045 - GET /apple-touch-icon.png - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: NetworkingExtension/8623.2.7.10.4 Network/5569.82.5 iOS/26.3.1
+2026-03-07 10:29:35,046 - 127.0.0.1 - - [07/Mar/2026 10:29:35] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2026-03-07 10:29:35,056 - GET /apple-touch-icon-precomposed.png - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: NetworkingExtension/8623.2.7.10.4 Network/5569.82.5 iOS/26.3.1
+2026-03-07 10:29:35,057 - 127.0.0.1 - - [07/Mar/2026 10:29:35] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2026-03-07 10:29:35,596 - GET /apple-touch-icon-120x120-precomposed.png - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari
+2026-03-07 10:29:35,597 - 127.0.0.1 - - [07/Mar/2026 10:29:35] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+2026-03-07 10:29:36,161 - GET /apple-touch-icon-120x120.png - IP: 2001:b400:e44c:e521:7803:c9a0:1094:ae29 - UA: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari
+2026-03-07 10:29:36,162 - 127.0.0.1 - - [07/Mar/2026 10:29:36] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+2026-03-07 10:34:51,771 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-07 10:34:51,772 - 127.0.0.1 - - [07/Mar/2026 10:34:51] "HEAD / HTTP/1.1" 200 -
+2026-03-07 10:40:58,996 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-07 10:40:58,996 - 127.0.0.1 - - [07/Mar/2026 10:40:58] "HEAD / HTTP/1.1" 200 -
+2026-03-07 10:42:09,673 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.165:5001
+2026-03-07 10:42:09,673 - [33mPress CTRL+C to quit[0m
+2026-03-07 10:42:11,638 - HEAD / - IP: 49.213.184.219 - UA: curl/8.5.0
+2026-03-07 10:42:11,640 - 127.0.0.1 - - [07/Mar/2026 10:42:11] "HEAD / HTTP/1.1" 200 -
